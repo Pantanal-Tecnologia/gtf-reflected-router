@@ -24,6 +24,8 @@ export interface RouteMetadata {
 }
 
 const ROUTES_METADATA_KEY = Symbol('routes');
+const REQUEST_PARAM_METADATA_KEY = Symbol('request-param');
+const RESPONSE_PARAM_METADATA_KEY = Symbol('response-param');
 
 function isValidHttpMethod(method: string): method is HttpMethod {
   return (Object.values(HTTP_METHODS) as string[]).includes(method);
@@ -105,6 +107,7 @@ export function Route(
   };
 }
 
+
 export const Get = (
   path: string,
   options?: Omit<RouteOptions, 'method' | 'url' | 'handler'>,
@@ -140,10 +143,120 @@ export const Options = (
   options?: Omit<RouteOptions, 'method' | 'url' | 'handler'>,
 ): MethodDecorator => Route(HTTP_METHODS.OPTIONS, path, options);
 
+/**
+ * Decorator para injetar o objeto FastifyRequest no parâmetro
+ * @returns Um decorator de parâmetro que marca o parâmetro para receber o objeto FastifyRequest
+ * @example
+ * class UserController {
+ *   @Get('/users/:id')
+ *   getUser(@Request() req: FastifyRequest) {
+ *     const id = req.params.id;
+ *     // ...
+ *   }
+ * }
+ */
+export function Request() {
+  return function (
+    target: object,
+    propertyKey: string | symbol,
+    parameterIndex: number,
+  ): void {
+    const existingParameters: number[] =
+      Reflect.getOwnMetadata(
+        REQUEST_PARAM_METADATA_KEY,
+        target.constructor,
+        propertyKey,
+      ) || [];
+
+    existingParameters.push(parameterIndex);
+
+    Reflect.defineMetadata(
+      REQUEST_PARAM_METADATA_KEY,
+      existingParameters,
+      target.constructor,
+      propertyKey,
+    );
+  };
+}
+
+/**
+ * Decorator para injetar o objeto FastifyReply no parâmetro
+ * @returns Um decorator de parâmetro que marca o parâmetro para receber o objeto FastifyReply
+ * @example
+ * class UserController {
+ *   @Post('/users')
+ *   createUser(@Request() req: FastifyRequest, @Response() reply: FastifyReply) {
+ *     // Processa a requisição
+ *     reply.code(201).send({ success: true });
+ *   }
+ * }
+ */
+export function Response() {
+  return function (
+    target: object,
+    propertyKey: string | symbol,
+    parameterIndex: number,
+  ): void {
+    const existingParameters: number[] =
+      Reflect.getOwnMetadata(
+        RESPONSE_PARAM_METADATA_KEY,
+        target.constructor,
+        propertyKey,
+      ) || [];
+
+    existingParameters.push(parameterIndex);
+
+    Reflect.defineMetadata(
+      RESPONSE_PARAM_METADATA_KEY,
+      existingParameters,
+      target.constructor,
+      propertyKey,
+    );
+  };
+}
+
 export function getRoutes(target: object): RouteMetadata[] {
   const metadata = Reflect.getMetadata(ROUTES_METADATA_KEY, target) as
     | RouteMetadata[]
     | undefined;
+
+  return metadata ?? [];
+}
+
+/**
+ * Obtém os índices dos parâmetros marcados com o decorator @Request
+ * @param target - A classe alvo
+ * @param propertyKey - O nome do método
+ * @returns Array de índices dos parâmetros
+ */
+export function getRequestParams(
+  target: object,
+  propertyKey: string | symbol,
+): number[] {
+  const metadata = Reflect.getOwnMetadata(
+    REQUEST_PARAM_METADATA_KEY,
+    target.constructor,
+    propertyKey,
+  ) as number[] | undefined;
+
+  return metadata ?? [];
+}
+
+/**
+ * Obtém os índices dos parâmetros marcados com o decorator @Response
+ * @param target - A classe alvo
+ * @param propertyKey - O nome do método
+ * @returns Array de índices dos parâmetros
+ */
+export function getResponseParams(
+  target: object,
+  propertyKey: string | symbol,
+): number[] {
+  const metadata = Reflect.getOwnMetadata(
+    RESPONSE_PARAM_METADATA_KEY,
+    target.constructor,
+    propertyKey,
+  ) as number[] | undefined;
 
   return metadata ?? [];
 }

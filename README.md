@@ -22,6 +22,7 @@ pnpm add  https://github.com/Pantanal-Tecnologia/gtf-reflected-router
 - Automatic route registration
 - Compatible with Fastify's route options
 - Prevents duplicate routes
+- Parameter decorators for request and response objects
 
 ## Usage
 
@@ -103,6 +104,29 @@ class ProductController {
 }
 ```
 
+### Using Parameter Decorators
+
+```typescript
+import { Get, Post, Request, Response } from 'gtf-router-handler';
+import { FastifyRequest } from 'fastify';
+import { FastifyReply } from 'fastify/types/reply';
+
+class UserController {
+  @Get('/users/:id')
+  async getUser(@Request() req: FastifyRequest) {
+    const { id } = req.params;
+    return { id, name: 'John Doe' };
+  }
+
+  @Post('/users')
+  async createUser(@Request() req: FastifyRequest, @Response() reply: FastifyReply) {
+    // Create a new user
+    reply.code(201);
+    return { success: true, user: req.body };
+  }
+}
+```
+
 ## API Reference
 
 ### HTTP Method Decorators
@@ -126,9 +150,16 @@ Parameters:
 - `path`: Route path (must start with '/')
 - `options`: Fastify route options (excluding method, url, and handler)
 
+### Parameter Decorators
+
+- `@Request()` - Injects the FastifyRequest object into the parameter
+- `@Response()` - Injects the FastifyReply object into the parameter
+
 ### Utility Functions
 
 - `getRoutes(targetClass)`: Retrieves all route metadata from a controller class
+- `getRequestParams(target, propertyKey)`: Gets the indices of parameters marked with @Request decorator
+- `getResponseParams(target, propertyKey)`: Gets the indices of parameters marked with @Response decorator
 
 ## Requirements
 
