@@ -30,7 +30,7 @@
     "http",
     "api"
   ],
-  "private": true,
+  "private": false,
   "dependencies": {
     "fastify": "^5.4.0",
     "reflect-metadata": "^0.2.2"
