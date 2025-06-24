@@ -11,8 +11,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "tsc",
-    "prebuild": "npm run build"
+    "build": "tsc"
   },
   "devDependencies": {
     "@eslint/js": "^9.29.0",
