@@ -6,13 +6,13 @@ A TypeScript library that provides decorators for defining and managing Fastify 
 
 ```bash
 # Using npm
-npm install gtf-router-handler
+npm install https://github.com/Pantanal-Tecnologia/gtf-reflected-router
 
 # Using yarn
-yarn add gtf-router-handler
+yarn add  https://github.com/Pantanal-Tecnologia/gtf-reflected-router
 
 # Using pnpm
-pnpm add gtf-router-handler
+pnpm add  https://github.com/Pantanal-Tecnologia/gtf-reflected-router
 ```
 
 ## Features
