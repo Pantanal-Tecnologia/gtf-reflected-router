@@ -16,6 +16,3 @@ export {
 } from './routes'
 
 export type { HttpMethod, RouteMetadata } from './routes'
-
-export {AfterRequest, getAfterRequestHooks, getBeforeRequestHooks, BeforeRequest, getPluginMetadata, isPlugin, Plugin } from './plugin'
-export type { PluginMetadata, HookMetadata } from './plugin'
