@@ -1,4 +1,4 @@
-# GTF Router Handler
+# GTF Reflected Router
 
 A TypeScript library that provides decorators for defining and managing Fastify routes in a clean, declarative way.
 
@@ -6,13 +6,13 @@ A TypeScript library that provides decorators for defining and managing Fastify 
 
 ```bash
 # Using npm
-npm install https://github.com/Pantanal-Tecnologia/gtf-reflected-router
+npm install gtf-reflected-router
 
 # Using yarn
-yarn add  https://github.com/Pantanal-Tecnologia/gtf-reflected-router
+yarn add  gtf-reflected-router
 
 # Using pnpm
-pnpm add  https://github.com/Pantanal-Tecnologia/gtf-reflected-router
+pnpm add  gtf-reflected-router
 ```
 
 ## Features
@@ -23,7 +23,6 @@ pnpm add  https://github.com/Pantanal-Tecnologia/gtf-reflected-router
 - Compatible with Fastify's route options
 - Prevents duplicate routes
 - Parameter decorators for request and response objects
-- Plugin decorators for Fastify plugins
 
 ## Usage
 
@@ -165,63 +164,6 @@ Parameters:
 - `getRoutes(targetClass)`: Retrieves all route metadata from a controller class
 - `getRequestParams(target, propertyKey)`: Gets the indices of parameters marked with @Request decorator
 - `getResponseParams(target, propertyKey)`: Gets the indices of parameters marked with @Response decorator
-
-### Plugin Decorators
-
-- `@Plugin(options?)` - Marks a class as a Fastify plugin
-- `@BeforeRequest()` - Marks a method to be executed before a request is processed
-- `@AfterRequest()` - Marks a method to be executed after a request is processed
-
-### Plugin Utility Functions
-
-- `isPlugin(targetClass)`: Checks if a class is marked as a plugin
-- `getPluginMetadata(targetClass)`: Retrieves plugin metadata from a class
-- `getBeforeRequestHooks(targetClass)`: Gets all methods marked with @BeforeRequest
-- `getAfterRequestHooks(targetClass)`: Gets all methods marked with @AfterRequest
-
-### Plugin Example
-
-```typescript
-import { Plugin, BeforeRequest, AfterRequest } from 'gtf-router-handler';
-import { FastifyRequest, FastifyReply } from 'fastify';
-
-@Plugin()
-export class LoggerPlugin {
-  @BeforeRequest()
-  async logRequest(request: FastifyRequest, reply: FastifyReply) {
-    console.log(`Request received: ${request.method} ${request.url}`);
-  }
-
-  @AfterRequest()
-  async logResponse(request: FastifyRequest, reply: FastifyReply) {
-    console.log(`Response sent with status: ${reply.statusCode}`);
-  }
-}
-
-// In your Fastify application:
-import fastify from 'fastify';
-import { LoggerPlugin, getBeforeRequestHooks, getAfterRequestHooks } from 'gtf-router-handler';
-
-const app = fastify();
-const loggerPlugin = new LoggerPlugin();
-
-// Register hooks
-const beforeHooks = getBeforeRequestHooks(LoggerPlugin);
-beforeHooks.forEach(hook => {
-  app.addHook('onRequest', async (request, reply) => {
-    await loggerPlugin[hook.handler](request, reply);
-  });
-});
-
-const afterHooks = getAfterRequestHooks(LoggerPlugin);
-afterHooks.forEach(hook => {
-  app.addHook('onResponse', async (request, reply) => {
-    await loggerPlugin[hook.handler](request, reply);
-  });
-});
-
-app.listen({ port: 3000 });
-```
 
 ## Requirements
 

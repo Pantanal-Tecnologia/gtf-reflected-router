@@ -14,10 +14,6 @@ export default tseslint.config(
     files: ['**/*.{ts,js}'],
     languageOptions: {
       ecmaVersion: 2020,
-      parserOptions: {
-        project: ['./tsconfig.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
     },
     rules: {
       'prettier/prettier': [
