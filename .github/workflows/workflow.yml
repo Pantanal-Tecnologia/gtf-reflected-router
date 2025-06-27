@@ -15,20 +15,18 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-          registry-url: 'https://registry.npmjs.org'
-          cache: 'pnpm'
+          check-latest: true
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 9.0.0
-          run_install: false
+      - name: Setup corepack
+        run: |
+          npm i -g corepack@0.31
+          corepack enable
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: Build packages
-        run: pnpm build
+        run: pnpx turbo@canary run build --only --filter='./turbopack/packages/*'
 
       - name: Publish to NPM
         env:
