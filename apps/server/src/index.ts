@@ -10,7 +10,7 @@ import swaggerUi from "@fastify/swagger-ui";
 import { controllerPlugin } from "./plugins/controller-plugin";
 import { UserController } from "./controllers/user.controller";
 
-const createApp = (): FastifyInstance => {
+export const createApp = (): FastifyInstance => {
   const isDevelopment = process.env.NODE_ENV === "development";
 
   return fastify({
@@ -53,7 +53,7 @@ const createApp = (): FastifyInstance => {
   });
 };
 
-const registerPlugins = async (app: FastifyInstance): Promise<void> => {
+export const registerPlugins = async (app: FastifyInstance): Promise<void> => {
   await app.register(cors, {
     origin: ["*"],
     credentials: true,
@@ -149,7 +149,7 @@ const registerPlugins = async (app: FastifyInstance): Promise<void> => {
   });
 };
 
-const registerHooks = (app: FastifyInstance): void => {
+export const registerHooks = (app: FastifyInstance): void => {
   app.setErrorHandler(async (error, request, reply) => {
     const { method, url } = request;
     const statusCode = error.statusCode || 500;

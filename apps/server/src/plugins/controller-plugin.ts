@@ -1,6 +1,6 @@
 import fastifyPlugin from "fastify-plugin";
 import { FastifyInstance } from "fastify";
-import { getRoutes } from "@repo/gtf-reflected-router/src";
+import { getRoutes } from "../../../../packages/reflected/decorators";
 import { Container } from "typedi";
 
 export interface ControllerOptions {

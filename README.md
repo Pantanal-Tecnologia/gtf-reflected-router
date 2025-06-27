@@ -170,3 +170,31 @@ Parameters:
 - TypeScript 4.5+
 - reflect-metadata
 - Fastify 5.x
+
+## Testing
+
+The project includes a comprehensive test suite using Jest. Tests are organized into unit tests and integration tests.
+
+### Running Tests
+
+```bash
+# Navigate to the server app
+cd apps/server
+
+# Run all tests
+npm test
+
+# Run tests in watch mode
+npm run test:watch
+
+# Run tests with coverage report
+npm run test:coverage
+```
+
+### Test Structure
+
+- Unit tests for controllers and plugins
+- Integration tests for API endpoints
+- Detailed documentation in `apps/server/src/__tests__/README.md`
+
+For more information about the testing approach and how to write new tests, see the [Testing Documentation](apps/server/src/__tests__/README.md).

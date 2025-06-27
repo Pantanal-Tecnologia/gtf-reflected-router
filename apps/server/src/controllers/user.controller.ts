@@ -1,4 +1,4 @@
-import { Get, Request, Response } from "@repo/gtf-reflected-router/src";
+import { Get, Request, Response } from "../../../../packages/reflected/decorators";
 import type { FastifyReply, FastifyRequest } from "fastify";
 import { Service } from "typedi";
 import { users } from "../lib/users";
