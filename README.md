@@ -1,135 +1,172 @@
-# Turborepo starter
+# GTF Reflected Router
 
-This Turborepo starter is maintained by the Turborepo core team.
+A TypeScript library that provides decorators for defining and managing Fastify routes in a clean, declarative way.
 
-## Using this example
+## Installation
 
-Run the following command:
+```bash
+# Using npm
+npm install gtf-reflected-router
 
-```sh
-npx create-turbo@latest
+# Using yarn
+yarn add  gtf-reflected-router
+
+# Using pnpm
+pnpm add  gtf-reflected-router
 ```
 
-## What's inside?
+## Features
 
-This Turborepo includes the following packages/apps:
+- TypeScript decorators for all standard HTTP methods
+- Type-safe route definitions
+- Automatic route registration
+- Compatible with Fastify's route options
+- Prevents duplicate routes
+- Parameter decorators for request and response objects
 
-### Apps and Packages
+## Usage
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+### Basic Example
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+```typescript
+import { Get, Post, getRoutes } from 'gtf-router-handler';
+import fastify from 'fastify';
 
-### Utilities
+const app = fastify();
 
-This Turborepo has some additional tools already setup for you:
+class UserController {
+  @Get('/users')
+  async getAllUsers(request, reply) {
+    return { users: ['John', 'Jane', 'Bob'] };
+  }
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+  @Get('/users/:id')
+  async getUserById(request, reply) {
+    const { id } = request.params;
+    return { id, name: 'John Doe' };
+  }
 
-### Build
+  @Post('/users')
+  async createUser(request, reply) {
+    // Create a new user
+    return { success: true, user: request.body };
+  }
+}
 
-To build all apps and packages, run the following command:
+// Register routes with Fastify
+const userController = new UserController();
+const routes = getRoutes(UserController);
 
-```
-cd my-turborepo
+routes.forEach(route => {
+  app.route({
+    method: route.method,
+    url: route.path,
+    handler: userController[route.handler].bind(userController),
+    ...route.options
+  });
+});
 
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build
-yarn dlx turbo build
-pnpm exec turbo build
-```
-
-You can build a specific package by using a [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
-
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build --filter=docs
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build --filter=docs
-yarn exec turbo build --filter=docs
-pnpm exec turbo build --filter=docs
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev
-yarn exec turbo dev
-pnpm exec turbo dev
+app.listen({ port: 3000 });
 ```
 
-You can develop a specific package by using a [filter](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters):
+### Using Route Options
 
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev --filter=web
+```typescript
+import { Post } from 'gtf-router-handler';
 
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev --filter=web
-yarn exec turbo dev --filter=web
-pnpm exec turbo dev --filter=web
-```
-
-### Remote Caching
-
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
-
-Turborepo can use a technique known as [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
-
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo login
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo login
-yarn exec turbo login
-pnpm exec turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-# With [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation) installed (recommended)
-turbo link
-
-# Without [global `turbo`](https://turborepo.com/docs/getting-started/installation#global-installation), use your package manager
-npx turbo link
-yarn exec turbo link
-pnpm exec turbo link
+class ProductController {
+  @Post('/products', {
+    schema: {
+      body: {
+        type: 'object',
+        required: ['name', 'price'],
+        properties: {
+          name: { type: 'string' },
+          price: { type: 'number' }
+        }
+      },
+      response: {
+        200: {
+          type: 'object',
+          properties: {
+            id: { type: 'string' },
+            name: { type: 'string' },
+            price: { type: 'number' }
+          }
+        }
+      }
+    }
+  })
+  async createProduct(request, reply) {
+    // Create product with validation from schema
+    return { id: '123', ...request.body };
+  }
+}
 ```
 
-## Useful Links
+### Using Parameter Decorators
 
-Learn more about the power of Turborepo:
+```typescript
+import { Get, Post, Request, Response } from 'gtf-router-handler';
+import { FastifyRequest } from 'fastify';
+import { FastifyReply } from 'fastify/types/reply';
 
-- [Tasks](https://turborepo.com/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.com/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.com/docs/reference/configuration)
-- [CLI Usage](https://turborepo.com/docs/reference/command-line-reference)
+class UserController {
+  @Get('/users/:id')
+  async getUser(@Request() req: FastifyRequest) {
+    const { id } = req.params;
+    return { id, name: 'John Doe' };
+  }
+
+  @Post('/users')
+  async createUser(@Request() req: FastifyRequest, @Response() reply: FastifyReply) {
+    // Create a new user
+    reply.code(201);
+    return { success: true, user: req.body };
+  }
+}
+```
+
+## API Reference
+
+### HTTP Method Decorators
+
+- `@Get(path, options?)` - Register a GET route
+- `@Post(path, options?)` - Register a POST route
+- `@Put(path, options?)` - Register a PUT route
+- `@Delete(path, options?)` - Register a DELETE route
+- `@Patch(path, options?)` - Register a PATCH route
+- `@Head(path, options?)` - Register a HEAD route
+- `@Options(path, options?)` - Register an OPTIONS route
+
+### Generic Route Decorator
+
+```typescript
+// @Route(method, path, options?)
+function exampleRoute() {
+  // This is just an example of how to use the Route decorator
+  Route('GET', '/example', { schema: { response: { 200: { type: 'object' } } } });
+}
+```
+
+Parameters:
+- `method`: HTTP method (GET, POST, PUT, etc.)
+- `path`: Route path (must start with '/')
+- `options`: Fastify route options (excluding method, url, and handler)
+
+### Parameter Decorators
+
+- `@Request()` - Injects the FastifyRequest object into the parameter
+- `@Response()` - Injects the FastifyReply object into the parameter
+
+### Utility Functions
+
+- `getRoutes(targetClass)`: Retrieves all route metadata from a controller class
+- `getRequestParams(target, propertyKey)`: Gets the indices of parameters marked with @Request decorator
+- `getResponseParams(target, propertyKey)`: Gets the indices of parameters marked with @Response decorator
+
+## Requirements
+
+- TypeScript 4.5+
+- reflect-metadata
+- Fastify 5.x
