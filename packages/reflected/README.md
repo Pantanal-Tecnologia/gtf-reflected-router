@@ -72,7 +72,7 @@ app.listen({ port: 3000 });
 ### Using Route Options
 
 ```typescript
-import { Post } from 'gtf-router-handler';
+import { Post } from 'gtf-reflected-router/decorators';
 
 class ProductController {
   @Post('/products', {
@@ -107,7 +107,7 @@ class ProductController {
 ### Using Parameter Decorators
 
 ```typescript
-import { Get, Post, Request, Response } from 'gtf-router-handler';
+import { Get, Post, Request, Response } from 'gtf-reflected-router/decorators';
 import { FastifyRequest } from 'fastify';
 import { FastifyReply } from 'fastify/types/reply';
 
