@@ -1,11 +1,21 @@
 {
   "name": "gtf-reflected-router",
   "author": "Pantanal-Tecnologia",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "",
   "repository": "https://github.com/Pantanal-Tecnologia/gtf-reflected-router",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./decorators": {
+      "types": "./dist/decorators.d.ts",
+      "default": "./dist/decorators.js"
+    }
+  },
   "files": [
     "dist/**/*",
     "decorators.js",
