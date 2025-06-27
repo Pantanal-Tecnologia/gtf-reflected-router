@@ -1,0 +1,35 @@
+{
+  "name": "gtf-reflected-router",
+  "author": "Pantanal-Tecnologia",
+  "version": "1.0.6",
+  "description": "",
+  "repository": "https://github.com/Pantanal-Tecnologia/gtf-reflected-router",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "fastify": "^5.4.0",
+    "reflect-metadata": "^0.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.3",
+    "typescript": "^5.8.3",
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*"
+  },
+  "keywords": [
+    "fastify",
+    "typescript",
+    "decorators",
+    "routing",
+    "http",
+    "api"
+  ],
+  "private": false
+}
