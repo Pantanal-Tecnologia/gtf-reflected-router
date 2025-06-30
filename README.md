@@ -29,7 +29,7 @@ pnpm add  gtf-reflected-router
 ### Basic Example
 
 ```typescript
-import { Get, Post, getRoutes } from 'gtf-router-handler';
+import { Get, Post, getRoutes } from 'gtf-reflected-router';
 import fastify from 'fastify';
 
 const app = fastify();
@@ -72,7 +72,7 @@ app.listen({ port: 3000 });
 ### Using Route Options
 
 ```typescript
-import { Post } from 'gtf-router-handler';
+import { Post } from 'gtf-reflected-router';
 
 class ProductController {
   @Post('/products', {
@@ -107,7 +107,7 @@ class ProductController {
 ### Using Parameter Decorators
 
 ```typescript
-import { Get, Post, Request, Response } from 'gtf-router-handler';
+import { Get, Post, Request, Response } from 'gtf-reflected-router';
 import { FastifyRequest } from 'fastify';
 import { FastifyReply } from 'fastify/types/reply';
 
