@@ -14,12 +14,18 @@
     "./decorators": {
       "types": "./dist/decorators.d.ts",
       "default": "./dist/decorators.js"
+    },
+    "./cron": {
+      "types": "./dist/cron.d.ts",
+      "default": "./dist/cron.js"
     }
   },
   "files": [
     "dist/**/*",
     "decorators.js",
     "decorators.d.ts",
+    "cron.js",
+    "cron.d.ts",
     "LICENSE"
   ],
   "scripts": {
