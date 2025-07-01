@@ -1,8 +1,6 @@
 import "reflect-metadata";
 
-/**
- * Interface para metadados de tarefas cron
- */
+
 export interface CronJobMetadata {
   expression: string;
   name: string;
@@ -10,14 +8,7 @@ export interface CronJobMetadata {
   options?: CronJobOptions;
 }
 
-/**
- * Opções para tarefas cron
- */
 export interface CronJobOptions {
-  /**
-   * Timezone para a execução da tarefa
-   * @example "America/Sao_Paulo"
-   */
   timezone?: string;
   
   /**
