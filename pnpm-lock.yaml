@@ -38,9 +38,6 @@ importers:
       fastify-plugin:
         specifier: ^5.0.1
         version: 5.0.1
-      gtf-reflected-router:
-        specifier: workspace:*
-        version: link:../../packages/reflected
       pino-pretty:
         specifier: ^13.0.0
         version: 13.0.0
