@@ -1,8 +1,9 @@
 {
   "name": "gtf-reflected-router",
   "author": "Pantanal-Tecnologia",
-  "version": "1.0.11",
-  "description": "",
+  "version": "1.0.12",
+  "description": "TypeScript decorators for defining and managing Fastify routes in a clean, declarative way",
+  "license": "MIT",
   "repository": "https://github.com/Pantanal-Tecnologia/gtf-reflected-router",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -22,24 +23,30 @@
   },
   "files": [
     "dist/**/*",
-    "decorators.js",
-    "decorators.d.ts",
-    "cron.js",
-    "cron.d.ts",
-    "LICENSE"
+    "LICENSE",
+    "README.md"
   ],
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "clean": "rm -rf dist",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src"
   },
   "dependencies": {
     "fastify": "^5.4.0",
     "reflect-metadata": "^0.2.2"
   },
   "devDependencies": {
-    "@types/node": "^24.0.3",
-    "typescript": "^5.8.3",
     "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*"
+    "@repo/typescript-config": "workspace:*",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^24.0.3",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.8.3"
   },
   "keywords": [
     "fastify",
@@ -47,7 +54,8 @@
     "decorators",
     "routing",
     "http",
-    "api"
+    "api",
+    "controller"
   ],
   "private": false
 }
