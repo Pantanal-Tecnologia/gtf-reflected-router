@@ -1,11 +1,12 @@
-import { Get, Request, Response } from "../../../../packages/reflected/decorators";
-import type { FastifyReply, FastifyRequest } from "fastify";
-import { Service } from "typedi";
-import { users } from "../lib/users";
+import { Get, Param, Req, Controller } from "../../../../packages/reflected/src/index.js";
+import type { FastifyRequest } from "fastify";
+import { Injectable } from "../../../../packages/reflected/src/container.js";
+import { users } from "../lib/users.js";
 
-@Service()
+@Injectable()
+@Controller("/users")
 export class UserController {
-  @Get("/users", {
+  @Get("/", {
     schema: {
       tags: ["users"],
       summary: "Get all users",
@@ -15,18 +16,10 @@ export class UserController {
           description: "Success",
           type: "array",
           properties: {
-            id: {
-              type: "number",
-            },
-            level: {
-              type: "number",
-            },
-            username: {
-              type: "string",
-            },
-            tag: {
-              type: "string",
-            },
+            id: { type: "number" },
+            level: { type: "number" },
+            username: { type: "string" },
+            tag: { type: "string" },
           },
         },
       },
@@ -36,7 +29,7 @@ export class UserController {
     return users;
   }
 
-  @Get("/users/:id", {
+  @Get("/:id", {
     schema: {
       tags: ["users"],
       summary: "Get user by id",
@@ -46,38 +39,23 @@ export class UserController {
           description: "Success",
           type: "object",
           properties: {
-            id: {
-              type: "number",
-            },
-            level: {
-              type: "number",
-            },
-            username: {
-              type: "string",
-            },
-            tag: {
-              type: "string",
-            },
+            id: { type: "number" },
+            level: { type: "number" },
+            username: { type: "string" },
+            tag: { type: "string" },
           },
         },
-        404: {
-          description: "Not found",
-        },
+        404: { description: "Not found" },
       },
     },
   })
-  async getUserById(
-    @Request() request: FastifyRequest<{ Params: { id: string } }>,
-    @Response() reply: FastifyReply,
-  ) {
-    const { id } = request.params;
-
-    const user = users.find((user) => user.id === Number(id));
+  async getUserById(@Param("id") id: string, @Req() request: FastifyRequest) {
+    const user = users.find((u) => u.id === Number(id));
 
     if (!user) {
-      return reply.status(404).send({ message: "User not found" });
+      return { message: "User not found" };
     }
 
-    reply.status(200).send(user);
+    return user;
   }
 }

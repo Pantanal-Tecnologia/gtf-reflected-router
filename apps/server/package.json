@@ -1,10 +1,11 @@
 {
   "name": "@repo/server",
   "scripts": {
-    "dev": "ts-node-dev --watch --transpile-only --respawn ./src/index.ts",
+    "dev": "nodemon --watch src --ext ts --exec 'node -r @swc-node/register' ./src/index.ts",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@fastify/compress": "^8.0.3",
@@ -14,20 +15,22 @@
     "fastify": "^5.4.0",
     "fastify-plugin": "^5.0.1",
     "pino-pretty": "^13.0.0",
-    "reflect-metadata": "^0.2.2",
-    "typedi": "^0.10.0"
+    "reflect-metadata": "^0.2.2"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
+    "@swc-node/register": "^1.11.1",
+    "@swc/core": "^1.15.21",
+    "@swc/jest": "^0.2.39",
     "@types/jest": "^29.5.12",
     "@types/node": "^24.0.3",
     "@types/supertest": "^6.0.2",
     "jest": "^29.7.0",
+    "nodemon": "^3.1.14",
     "supertest": "^6.3.4",
-    "ts-jest": "^29.1.2",
-    "ts-node-dev": "^2.0.0",
     "tsconfig-paths": "^4.2.0",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "zod": "^4.3.6"
   }
 }

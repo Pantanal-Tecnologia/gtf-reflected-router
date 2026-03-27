@@ -1,71 +1,54 @@
-import { FastifyInstance } from 'fastify';
-import { controllerPlugin } from '../controller-plugin';
-import { Container } from 'typedi';
-import * as decorators from '../../../../../packages/reflected/decorators';
+import "reflect-metadata";
+import { FastifyInstance } from "fastify";
+import { controllerPlugin } from "../controller-plugin.js";
+import { Container } from "../../../../../packages/reflected/src/container.js";
+import { Controller, Get } from "../../../../../packages/reflected/src/decorators.js";
 
+@Controller("/items")
 class MockController {
-  mockMethod() {
-    return { success: true };
+  @Get("/")
+  list() {
+    return [{ id: 1 }];
+  }
+
+  @Get("/:id")
+  getById() {
+    return { id: 1 };
   }
 }
 
-describe('Controller Plugin', () => {
+describe("Controller Plugin", () => {
   let mockFastify: FastifyInstance;
-  
+
   beforeEach(() => {
+    Container.clear();
+    Container.register(MockController);
+
     mockFastify = {
       route: jest.fn(),
+      addHook: jest.fn(),
       register: jest.fn().mockImplementation((plugin, options) => plugin(mockFastify, options)),
     } as unknown as FastifyInstance;
-    
-    jest.spyOn(Container, 'get').mockImplementation(() => new MockController());
-    
-    // Mock getRoutes
-    jest.spyOn(decorators, 'getRoutes').mockReturnValue([
-      {
-        method: 'GET',
-        path: '/test',
-        handler: 'mockMethod',
-        options: {
-          schema: {
-            tags: ['test'],
-            summary: 'Test endpoint',
-          }
-        }
-      }
-    ]);
   });
-  
-  afterEach(() => {
-    jest.restoreAllMocks();
-  });
-  
-  it('should register routes from controllers', async () => {
-    const options = {
+
+  it("registers routes from controllers with prefix + controller prefix", async () => {
+    await controllerPlugin(mockFastify, {
       controllers: [MockController],
-      prefix: '/api'
-    };
-    
-    await controllerPlugin(mockFastify, options);
-    
-    expect(Container.get).toHaveBeenCalledWith(MockController);
-    expect(decorators.getRoutes).toHaveBeenCalledWith(MockController);
-    expect(mockFastify.route).toHaveBeenCalledWith(expect.objectContaining({
-      method: 'GET',
-      url: '/api/test',
-    }));
+      prefix: "/api",
+    });
+
+    expect(mockFastify.route).toHaveBeenCalledTimes(2);
+    expect(mockFastify.route).toHaveBeenCalledWith(
+      expect.objectContaining({ method: "GET", url: "/api/items/" }),
+    );
+    expect(mockFastify.route).toHaveBeenCalledWith(
+      expect.objectContaining({ method: "GET", url: "/api/items/:id" }),
+    );
   });
-  
-  it('should use empty prefix if not provided', async () => {
-    const options = {
-      controllers: [MockController]
-    };
-    
-    await controllerPlugin(mockFastify, options);
-    
-    expect(mockFastify.route).toHaveBeenCalledWith(expect.objectContaining({
-      method: 'GET',
-      url: '/test',
-    }));
+
+  it("uses empty prefix if not provided", async () => {
+    await controllerPlugin(mockFastify, { controllers: [MockController] });
+
+    expect(mockFastify.route).toHaveBeenCalledWith(expect.objectContaining({ url: "/items/" }));
   });
 });

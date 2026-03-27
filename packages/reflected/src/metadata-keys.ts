@@ -1,5 +1,11 @@
-export const ROUTES_METADATA_KEY = Symbol("routes");
-export const REQUEST_PARAM_METADATA_KEY = Symbol("request-param");
-export const RESPONSE_PARAM_METADATA_KEY = Symbol("response-param");
-export const CONTROLLER_PREFIX_METADATA_KEY = Symbol("controller-prefix");
-export const CRON_JOBS_METADATA_KEY = Symbol("cron-jobs");
+export const ROUTES_METADATA_KEY = Symbol.for("gtf:routes:metadata");
+export const REQUEST_PARAM_METADATA_KEY = Symbol.for("gtf:request-param:metadata");
+export const RESPONSE_PARAM_METADATA_KEY = Symbol.for("gtf:response-param:metadata");
+export const CONTROLLER_PREFIX_METADATA_KEY = Symbol.for("gtf:controller-prefix:metadata");
+export const CRON_JOBS_METADATA_KEY = Symbol.for("gtf:cron-jobs:metadata");
+export const PARAM_METADATA_KEY = Symbol.for("gtf:param:metadata");
+export const CUSTOM_PARAM_METADATA_KEY = Symbol.for("gtf:custom-param:metadata");
+export const INJECTABLE_METADATA_KEY = Symbol.for("gtf:injectable:metadata");
+export const GUARDS_METADATA_KEY = Symbol.for("gtf:guards:metadata");
+export const INTERCEPTORS_METADATA_KEY = Symbol.for("gtf:interceptors:metadata");
+export const HTTP_CODE_METADATA_KEY = Symbol.for("gtf:http-code:metadata");

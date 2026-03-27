@@ -5,9 +5,12 @@ import {
   REQUEST_PARAM_METADATA_KEY,
   RESPONSE_PARAM_METADATA_KEY,
   ROUTES_METADATA_KEY,
-} from "./metadata-keys";
-import { HTTP_METHODS } from "./types";
-import type { HttpMethod, RouteMetadata } from "./types";
+  HTTP_CODE_METADATA_KEY,
+} from "./metadata-keys.js";
+import { HTTP_METHODS } from "./types.js";
+import type { HttpMethod, RouteMetadata } from "./types.js";
+import { Container } from "./container.js";
+import { registry } from "./registry.js";
 
 export type { HttpMethod, RouteMetadata };
 export { HTTP_METHODS };
@@ -26,6 +29,8 @@ export function Controller(prefix = ""): (target: object) => void {
   }
   return (target: object): void => {
     Reflect.defineMetadata(CONTROLLER_PREFIX_METADATA_KEY, prefix, target);
+    Container.register(target as new (...args: any[]) => any, { scope: "singleton" });
+    registry.register(target as new (...args: any[]) => any);
   };
 }
 
@@ -106,6 +111,9 @@ export const Options = (
   options?: Omit<RouteOptions, "method" | "url" | "handler">,
 ): MethodDecorator => Route(HTTP_METHODS.OPTIONS, path, options);
 
+/**
+ * @deprecated Use `@Req()` from `gtf-reflected-router/params` instead.
+ */
 export function Request(): ParameterDecorator {
   return (
     target: object,
@@ -124,6 +132,9 @@ export function Request(): ParameterDecorator {
   };
 }
 
+/**
+ * @deprecated Use `@Res()` from `gtf-reflected-router/params` instead.
+ */
 export function Response(): ParameterDecorator {
   return (
     target: object,
@@ -160,4 +171,19 @@ export function getResponseParams(target: object, propertyKey: string | symbol):
       | number[]
       | undefined) ?? []
   );
+}
+
+export function HttpCode(statusCode: number): MethodDecorator {
+  return (target, propertyKey) => {
+    Reflect.defineMetadata(
+      HTTP_CODE_METADATA_KEY,
+      statusCode,
+      (target as any).constructor,
+      propertyKey,
+    );
+  };
+}
+
+export function getHttpCode(target: object, propertyKey: string | symbol): number | undefined {
+  return Reflect.getMetadata(HTTP_CODE_METADATA_KEY, target, propertyKey) as number | undefined;
 }
