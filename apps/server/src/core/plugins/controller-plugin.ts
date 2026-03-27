@@ -1,26 +1,16 @@
 import fastifyPlugin from "fastify-plugin";
 import { FastifyInstance, FastifyRequest, FastifyReply } from "fastify";
-import {
-  getRoutes,
-  getControllerPrefix,
-  getHttpCode,
-} from "../../../../packages/reflected/src/decorators.js";
-import {
-  getParamMetadata,
-  getCustomParamMetadata,
-} from "../../../../packages/reflected/src/params.js";
-import { ParamType } from "../../../../packages/reflected/src/types.js";
-import type { ExecutionContext } from "../../../../packages/reflected/src/types.js";
-import { Container } from "../../../../packages/reflected/src/container.js";
-import { getRegisteredControllers } from "../../../../packages/reflected/src/discovery.js";
-import { getGuards } from "../../../../packages/reflected/src/guards.js";
-import type { CanActivate } from "../../../../packages/reflected/src/guards.js";
-import { getInterceptors } from "../../../../packages/reflected/src/interceptors.js";
-import type { Interceptor, CallHandler } from "../../../../packages/reflected/src/interceptors.js";
-import type {
-  OnApplicationBootstrap,
-  OnApplicationShutdown,
-} from "../../../../packages/reflected/src/lifecycle.js";
+import { getRoutes, getControllerPrefix, getHttpCode } from "gtf-reflected-router";
+import { getParamMetadata, getCustomParamMetadata } from "gtf-reflected-router";
+import { ParamType } from "gtf-reflected-router";
+import type { ExecutionContext } from "gtf-reflected-router";
+import { Container } from "gtf-reflected-router";
+import { getRegisteredControllers } from "gtf-reflected-router";
+import { getGuards } from "gtf-reflected-router";
+import type { CanActivate } from "gtf-reflected-router";
+import { getInterceptors } from "gtf-reflected-router";
+import type { Interceptor, CallHandler } from "gtf-reflected-router";
+import type { OnApplicationBootstrap, OnApplicationShutdown } from "gtf-reflected-router";
 
 export interface ControllerOptions {
   controllers?: any[];
@@ -38,7 +28,7 @@ function createExecutionContext(
       getRequest: <T = any>() => request as T,
       getReply: <T = any>() => reply as T,
     }),
-    getHandler: () => (ControllerClass.prototype as Record<string, unknown>)[handlerName],
+    getHandler: () => (ControllerClass.prototype as Record<string, any>)[handlerName],
     getClass: () => ControllerClass,
   };
 }

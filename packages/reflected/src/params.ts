@@ -1,7 +1,7 @@
 import "reflect-metadata";
-import { PARAM_METADATA_KEY, CUSTOM_PARAM_METADATA_KEY } from "./metadata-keys.js";
-import type { ParamMetadata, CustomParamMetadata, CustomParamFactory, ZodLike } from "./types.js";
-import { ParamType } from "./types.js";
+import { PARAM_METADATA_KEY, CUSTOM_PARAM_METADATA_KEY } from "./metadata-keys";
+import type { ParamMetadata, CustomParamMetadata, CustomParamFactory, ZodLike } from "./types";
+import { ParamType } from "./types";
 
 function isZodSchema(value: unknown): value is ZodLike {
   return (

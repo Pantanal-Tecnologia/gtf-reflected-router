@@ -1,23 +1,30 @@
 import "reflect-metadata";
 
-import fastify, { FastifyInstance } from "fastify";
+import fastify, { type FastifyInstance } from "fastify";
 import compress from "@fastify/compress";
 import cors from "@fastify/cors";
 import zlib from "node:zlib";
 import * as process from "node:process";
 import swagger from "@fastify/swagger";
 import swaggerUi from "@fastify/swagger-ui";
-import { controllerPlugin } from "./plugins/controller-plugin";
-import { UserController } from "./controllers/user.controller";
 
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { controllerPlugin } from "./core/plugins/controller-plugin";
+import { discoverControllers } from "gtf-reflected-router";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+/**
+ * Creates and configures the Fastify application instance.
+ */
 export const createApp = (): FastifyInstance => {
   const isDevelopment = process.env.NODE_ENV === "development";
 
   return fastify({
     connectionTimeout: 30000,
     keepAliveTimeout: 5000,
-    maxParamLength: 5000,
-    bodyLimit: 10485760,
     logger: {
       level: process.env.LOG_LEVEL || (isDevelopment ? "info" : "warn"),
       transport: isDevelopment
@@ -31,28 +38,15 @@ export const createApp = (): FastifyInstance => {
           }
         : undefined,
       redact: ["req.headers.authorization", "req.headers.cookie"],
-      serializers: {
-        req(req) {
-          return {
-            method: req.method,
-            url: req.url,
-            hostname: req.hostname,
-            remoteAddress: req.ip,
-            userAgent: req.headers["user-agent"],
-          };
-        },
-        res(res) {
-          return {
-            statusCode: res.statusCode,
-          };
-        },
-      },
     },
     trustProxy: true,
-    disableRequestLogging: process.env.NODE_ENV === "production",
+    disableRequestLogging: !isDevelopment,
   });
 };
 
+/**
+ * Registers core plugins and documentation tools.
+ */
 export const registerPlugins = async (app: FastifyInstance): Promise<void> => {
   await app.register(cors, {
     origin: ["*"],
@@ -70,147 +64,89 @@ export const registerPlugins = async (app: FastifyInstance): Promise<void> => {
         [zlib.constants.BROTLI_PARAM_QUALITY]: 6,
       },
     },
-    zlibOptions: {
-      level: 6,
-      windowBits: 15,
-      memLevel: 8,
-    },
+    zlibOptions: { level: 6 },
     threshold: 1024,
-    encodings: ["gzip", "deflate", "br"],
   });
 
   await app.register(swagger, {
-    swagger: {
-      info: {
-        title: "GTF Client Dashboard API",
-        description: "API documentation for GTF Client Dashboard",
-        version: "1.0.0",
-      },
-      externalDocs: {
-        url: "https://swagger.io",
-        description: "Find more info here",
-      },
-      host: `localhost:8080`,
-      schemes: ["http", "https"],
-      consumes: ["application/json"],
-      produces: ["application/json"],
-      securityDefinitions: {
-        BearerAuth: {
-          type: "apiKey",
-          name: "Authorization",
-          in: "header",
-          description: "Enter JWT Bearer token in format: Bearer <token>",
-        },
-      },
-      security: [{ BearerAuth: [] }],
-      tags: [
-        { name: "fornecedores", description: "Fornecedores related endpoints" },
-        { name: "frota", description: "Frota related endpoints" },
-        { name: "auth", description: "Authentication related endpoints" },
-      ],
-    },
-    mode: "dynamic",
-    hideUntagged: true,
     openapi: {
       info: {
-        title: "GTF Client Dashboard API",
-        description: "API documentation for GTF Client Dashboard",
+        title: "GTF Reflected Router API",
+        description: "Modern, declarative API documentation",
         version: "1.0.0",
       },
-      servers: [
-        {
-          url: `http://localhost:8080`,
-          description: "Development server",
-        },
-      ],
+      servers: [{ url: `http://localhost:8080`, description: "Development" }],
       components: {
         securitySchemes: {
           BearerAuth: {
             type: "http",
             scheme: "bearer",
             bearerFormat: "JWT",
-            description: "Enter JWT Bearer token",
           },
         },
       },
       security: [{ BearerAuth: [] }],
-      tags: [{ name: "users", description: "Users related endpoints" }],
+      tags: [
+        { name: "auth", description: "Authentication layer" },
+        { name: "users", description: "User management" },
+      ],
     },
   });
 
   await app.register(swaggerUi, {
     routePrefix: "/documentation",
-    uiConfig: {
-      docExpansion: "list",
-      deepLinking: false,
-    },
-    staticCSP: true,
-    transformStaticCSP: (header) => header,
+    uiConfig: { docExpansion: "list", deepLinking: false },
   });
 };
 
+/**
+ * Registers global hooks and error handlers.
+ */
 export const registerHooks = (app: FastifyInstance): void => {
   app.setErrorHandler(async (error, request, reply) => {
-    const { method, url } = request;
     const statusCode = error.statusCode || 500;
 
     app.log.error(
-      {
-        error: {
-          message: error.message,
-          stack: error.stack,
-          statusCode,
-        },
-        request: { method, url },
-      },
-      "Request error",
+      { error, request: { method: request.method, url: request.url } },
+      "Unhandled Error",
     );
-
-    const message =
-      process.env.NODE_ENV === "production" && statusCode === 500
-        ? "Internal Server Error"
-        : error.message;
 
     reply.status(statusCode).send({
       error: {
-        message,
+        message:
+          statusCode === 500 && process.env.NODE_ENV === "production"
+            ? "Internal Server Error"
+            : error.message,
         statusCode,
         timestamp: new Date().toISOString(),
-      },
-    });
-  });
-
-  app.setNotFoundHandler(async (_request, reply) => {
-    reply.status(404).send({
-      error: {
-        message: "Route not found",
-        statusCode: 404,
-        timestamp: new Date().toISOString(),
+        details: (error as any).details,
       },
     });
   });
 };
 
+/**
+ * Main entry point to start the server.
+ */
 const startServer = async (): Promise<void> => {
   try {
     const app = createApp();
     registerHooks(app);
-
     await registerPlugins(app);
 
-    app.register(controllerPlugin, {
-      controllers: [UserController],
-      prefix: "/api",
-    });
+    // Auto-discover all *.controller.ts files under modules/
+    await discoverControllers({ cwd: path.join(__dirname, "modules") });
 
-    await app.listen({
-      port: 8080,
-      host: "0.0.0.0",
-    });
+    // Register Controllers via our custom plugin (uses registry automatically)
+    await app.register(controllerPlugin, { prefix: "/api" });
 
-    app.log.info(`Server running at http://0.0.0.0:8080`);
+    const port = Number(process.env.PORT) || 8080;
+    await app.listen({ port, host: "0.0.0.0" });
+
+    app.log.info(`🚀 Server ready at http://0.0.0.0:${port}`);
+    app.log.info(`📝 Swagger docs: http://0.0.0.0:${port}/documentation`);
   } catch (error) {
-    console.error("Failed to start server:", error);
+    console.error("❌ Failed to start server:", error);
     process.exit(1);
   }
 };

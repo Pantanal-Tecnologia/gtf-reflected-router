@@ -1,0 +1,2177 @@
+[
+  {
+    "session_id": "b77fdac9-acac-4cde-9aae-31ab91286572",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b77fdac9-acac-4cde-9aae-31ab91286572.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "ls /Users/thiago/gtf-reflected-router/packages/reflected/src/",
+      "description": "List all source files in reflected package"
+    },
+    "tool_use_id": "toolu_01EhvKTNnAD2fENamjpfHk5C"
+  },
+  {
+    "session_id": "b77fdac9-acac-4cde-9aae-31ab91286572",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b77fdac9-acac-4cde-9aae-31ab91286572.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/src/lifecycle.ts"
+    },
+    "tool_use_id": "toolu_016n9YNZ7yuTqPJabhxaw13Q"
+  },
+  {
+    "session_id": "b77fdac9-acac-4cde-9aae-31ab91286572",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b77fdac9-acac-4cde-9aae-31ab91286572.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Edit",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/src/index.ts",
+      "old_string": "export type {\n  ParamMetadata,\n  CustomParamMetadata,\n  CustomParamFactory,\n  ExecutionContext,\n  HttpArgumentsHost,\n} from \"./types\";",
+      "new_string": "export type {\n  ParamMetadata,\n  CustomParamMetadata,\n  CustomParamFactory,\n  ExecutionContext,\n  HttpArgumentsHost,\n  ZodLike,\n} from \"./types\";",
+      "replace_all": false
+    },
+    "tool_use_id": "toolu_01QvXbfmFaMi1xntRxY9gSgh"
+  },
+  {
+    "session_id": "b77fdac9-acac-4cde-9aae-31ab91286572",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b77fdac9-acac-4cde-9aae-31ab91286572.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Edit",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/src/core/plugins/controller-plugin.ts",
+      "old_string": "import type {\n  OnApplicationBootstrap,\n  OnApplicationShutdown,\n} from \"../../../../../packages/reflected/src/lifecycle\";",
+      "new_string": "import type { OnApplicationBootstrap, OnApplicationShutdown } from \"gtf-reflected-router\";",
+      "replace_all": false
+    },
+    "tool_use_id": "toolu_01JbfnsmTKDYBa7xpSC2Cym2"
+  },
+  {
+    "session_id": "b77fdac9-acac-4cde-9aae-31ab91286572",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b77fdac9-acac-4cde-9aae-31ab91286572.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/src/decorators.ts"
+    },
+    "tool_use_id": "toolu_0177ekyt56i6gzjQ9ixgZ1hg"
+  },
+  {
+    "session_id": "b77fdac9-acac-4cde-9aae-31ab91286572",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b77fdac9-acac-4cde-9aae-31ab91286572.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/package.json"
+    },
+    "tool_use_id": "toolu_01LcVTX45zDNN4ZoobZ1fCss"
+  },
+  {
+    "session_id": "b77fdac9-acac-4cde-9aae-31ab91286572",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b77fdac9-acac-4cde-9aae-31ab91286572.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "grep -n \"getHttpCode\" /Users/thiago/gtf-reflected-router/packages/reflected/dist/index.d.ts 2>/dev/null || echo \"NOT FOUND in dist\"",
+      "description": "Check if getHttpCode is in compiled types"
+    },
+    "tool_use_id": "toolu_01FJX7jEaF5xJyDjeQYmoRmk"
+  },
+  {
+    "session_id": "b77fdac9-acac-4cde-9aae-31ab91286572",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b77fdac9-acac-4cde-9aae-31ab91286572.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "cat /Users/thiago/gtf-reflected-router/apps/server/tsconfig.json",
+      "description": "Read server tsconfig"
+    },
+    "tool_use_id": "toolu_01E7CDEhAboCwE14S15mgmps"
+  },
+  {
+    "session_id": "b77fdac9-acac-4cde-9aae-31ab91286572",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b77fdac9-acac-4cde-9aae-31ab91286572.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "cat /Users/thiago/gtf-reflected-router/packages/reflected/dist/index.d.ts",
+      "description": "Check current dist/index.d.ts content"
+    },
+    "tool_use_id": "toolu_0136T6HtRQXyamV8CxikaZAu"
+  },
+  {
+    "session_id": "b77fdac9-acac-4cde-9aae-31ab91286572",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b77fdac9-acac-4cde-9aae-31ab91286572.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "cat /Users/thiago/gtf-reflected-router/packages/reflected/.swcrc && echo \"---\" && cat /Users/thiago/gtf-reflected-router/packages/reflected/tsconfig.json",
+      "description": "Check SWC and TypeScript config"
+    },
+    "tool_use_id": "toolu_01SBF6DALkk6Ms6uSHTir8XH"
+  },
+  {
+    "session_id": "b77fdac9-acac-4cde-9aae-31ab91286572",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b77fdac9-acac-4cde-9aae-31ab91286572.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "cat /Users/thiago/gtf-reflected-router/turbo.json",
+      "description": "Check turbo pipeline config"
+    },
+    "tool_use_id": "toolu_01CDRGWUypY4pUdxDJG7v6mp"
+  },
+  {
+    "session_id": "b77fdac9-acac-4cde-9aae-31ab91286572",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b77fdac9-acac-4cde-9aae-31ab91286572.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Edit",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/package.json",
+      "old_string": "\"build\": \"swc src -d dist --strip-leading-paths\",",
+      "new_string": "\"build\": \"swc src -d dist --strip-leading-paths && tsc --emitDeclarationOnly\",",
+      "replace_all": false
+    },
+    "tool_use_id": "toolu_01E5xRYR9ZCsX7vFGfaFB43B"
+  },
+  {
+    "session_id": "b77fdac9-acac-4cde-9aae-31ab91286572",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b77fdac9-acac-4cde-9aae-31ab91286572.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "cd /Users/thiago/gtf-reflected-router/packages/reflected && pnpm build 2>&1",
+      "timeout": 60000,
+      "description": "Build reflected package with type declarations"
+    },
+    "tool_use_id": "toolu_017ht8BvBcs7AJw1uK1xraj9"
+  },
+  {
+    "session_id": "b77fdac9-acac-4cde-9aae-31ab91286572",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b77fdac9-acac-4cde-9aae-31ab91286572.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/src/guards.ts"
+    },
+    "tool_use_id": "toolu_018dTxCC2AzMXmaXAf32NbEE"
+  },
+  {
+    "session_id": "b77fdac9-acac-4cde-9aae-31ab91286572",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b77fdac9-acac-4cde-9aae-31ab91286572.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/src/interceptors.ts"
+    },
+    "tool_use_id": "toolu_01SoLntDYNBfM7ix235EUBaE"
+  },
+  {
+    "session_id": "b77fdac9-acac-4cde-9aae-31ab91286572",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b77fdac9-acac-4cde-9aae-31ab91286572.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "cat /Users/thiago/gtf-reflected-router/packages/typescript-config/base.json 2>/dev/null || find /Users/thiago/gtf-reflected-router -name \"base.json\" -path \"*/typescript-config/*\" | xargs cat 2>/dev/null",
+      "description": "Check base TypeScript config"
+    },
+    "tool_use_id": "toolu_01Dd2eeL9MFsmPMyFriDiutQ"
+  },
+  {
+    "session_id": "b77fdac9-acac-4cde-9aae-31ab91286572",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b77fdac9-acac-4cde-9aae-31ab91286572.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Edit",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/src/guards.ts",
+      "old_string": "export function UseGuards(\n  ...guards: (Constructor<CanActivate> | CanActivate)[]\n): ClassDecorator & MethodDecorator {\n  return (target: any, propertyKey?: string | symbol, descriptor?: PropertyDescriptor) => {\n    if (propertyKey !== undefined) {\n      Reflect.defineMetadata(GUARDS_METADATA_KEY, guards, target.constructor, propertyKey);\n    } else {\n      Reflect.defineMetadata(GUARDS_METADATA_KEY, guards, target);\n    }\n    return descriptor;\n  };\n}",
+      "new_string": "export function UseGuards(\n  ...guards: (Constructor<CanActivate> | CanActivate)[]\n): ClassDecorator & MethodDecorator {\n  const decorator = (target: any, propertyKey?: string | symbol) => {\n    if (propertyKey !== undefined) {\n      Reflect.defineMetadata(GUARDS_METADATA_KEY, guards, target.constructor, propertyKey);\n    } else {\n      Reflect.defineMetadata(GUARDS_METADATA_KEY, guards, target);\n    }\n  };\n  return decorator as ClassDecorator & MethodDecorator;\n}",
+      "replace_all": false
+    },
+    "tool_use_id": "toolu_01TpT1rG6pDxnzBUGMNMvkTU"
+  },
+  {
+    "session_id": "b77fdac9-acac-4cde-9aae-31ab91286572",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b77fdac9-acac-4cde-9aae-31ab91286572.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Edit",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/src/interceptors.ts",
+      "old_string": "export function UseInterceptors(\n  ...interceptors: (Constructor<Interceptor> | Interceptor)[]\n): ClassDecorator & MethodDecorator {\n  return (target: any, propertyKey?: string | symbol, descriptor?: PropertyDescriptor) => {\n    if (propertyKey !== undefined) {\n      Reflect.defineMetadata(\n        INTERCEPTORS_METADATA_KEY,\n        interceptors,\n        target.constructor,\n        propertyKey,\n      );\n    } else {\n      Reflect.defineMetadata(INTERCEPTORS_METADATA_KEY, interceptors, target);\n    }\n    return descriptor;\n  };\n}",
+      "new_string": "export function UseInterceptors(\n  ...interceptors: (Constructor<Interceptor> | Interceptor)[]\n): ClassDecorator & MethodDecorator {\n  const decorator = (target: any, propertyKey?: string | symbol) => {\n    if (propertyKey !== undefined) {\n      Reflect.defineMetadata(\n        INTERCEPTORS_METADATA_KEY,\n        interceptors,\n        target.constructor,\n        propertyKey,\n      );\n    } else {\n      Reflect.defineMetadata(INTERCEPTORS_METADATA_KEY, interceptors, target);\n    }\n  };\n  return decorator as ClassDecorator & MethodDecorator;\n}",
+      "replace_all": false
+    },
+    "tool_use_id": "toolu_01TVD2BDcfmDGsTNC1XzG1CZ"
+  },
+  {
+    "session_id": "b77fdac9-acac-4cde-9aae-31ab91286572",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b77fdac9-acac-4cde-9aae-31ab91286572.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "cd /Users/thiago/gtf-reflected-router/packages/reflected && pnpm build 2>&1",
+      "timeout": 60000,
+      "description": "Rebuild reflected package"
+    },
+    "tool_use_id": "toolu_01NuPTJLANJW1ws7FY2UbDbg"
+  },
+  {
+    "session_id": "c0e9027f-45ea-41ab-a1d4-122eaaaf19a8",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/c0e9027f-45ea-41ab-a1d4-122eaaaf19a8.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Agent",
+    "tool_input": {
+      "description": "Explore reflected router auto-discovery",
+      "prompt": "Explore the codebase at /Users/thiago/gtf-reflected-router and answer:\n1. What is in packages/reflected/src/ - read key files (container.ts, discovery.ts, index.ts, decorators.ts)\n2. What is in apps/server/src/core/ - read all files there\n3. What is in apps/server/src/modules/ - read controller files there (users, auth)\n4. What controllers exist and how are they structured?\n5. How does the auto-discovery mechanism work in the reflected package?\n\nFocus on understanding the auto-discovery API so I can replace the manual controllerPlugin registration in index.ts.",
+      "subagent_type": "Explore"
+    },
+    "tool_use_id": "toolu_01X2hNHRWqJnSBqkGRNRe1Kg"
+  },
+  {
+    "session_id": "c0e9027f-45ea-41ab-a1d4-122eaaaf19a8",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/c0e9027f-45ea-41ab-a1d4-122eaaaf19a8.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a72bd8ec8ce31ceff",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/src/index.ts"
+    },
+    "tool_use_id": "toolu_016d4UTj7ufpq9yFmRCAZRqC"
+  },
+  {
+    "session_id": "c0e9027f-45ea-41ab-a1d4-122eaaaf19a8",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/c0e9027f-45ea-41ab-a1d4-122eaaaf19a8.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a72bd8ec8ce31ceff",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/src/container.ts"
+    },
+    "tool_use_id": "toolu_01Qkvcs5ceo6Q2co36md3uEb"
+  },
+  {
+    "session_id": "c0e9027f-45ea-41ab-a1d4-122eaaaf19a8",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/c0e9027f-45ea-41ab-a1d4-122eaaaf19a8.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a72bd8ec8ce31ceff",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/src/discovery.ts"
+    },
+    "tool_use_id": "toolu_01TNDnT1weNhaFj5Hv6FCeML"
+  },
+  {
+    "session_id": "c0e9027f-45ea-41ab-a1d4-122eaaaf19a8",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/c0e9027f-45ea-41ab-a1d4-122eaaaf19a8.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a72bd8ec8ce31ceff",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/src/decorators.ts"
+    },
+    "tool_use_id": "toolu_01TfVCfpRuhJNTjHFbx3xk5G"
+  },
+  {
+    "session_id": "c0e9027f-45ea-41ab-a1d4-122eaaaf19a8",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/c0e9027f-45ea-41ab-a1d4-122eaaaf19a8.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a72bd8ec8ce31ceff",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Glob",
+    "tool_input": {
+      "pattern": "/Users/thiago/gtf-reflected-router/apps/server/src/core/**/*.ts"
+    },
+    "tool_use_id": "toolu_01KN2KmV1b6As7u5d3HQkqYr"
+  },
+  {
+    "session_id": "c0e9027f-45ea-41ab-a1d4-122eaaaf19a8",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/c0e9027f-45ea-41ab-a1d4-122eaaaf19a8.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a72bd8ec8ce31ceff",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Glob",
+    "tool_input": {
+      "pattern": "/Users/thiago/gtf-reflected-router/apps/server/src/modules/**/controllers/**/*.ts"
+    },
+    "tool_use_id": "toolu_01GUA6eZ72fawEgk8kEfYLWk"
+  },
+  {
+    "session_id": "c0e9027f-45ea-41ab-a1d4-122eaaaf19a8",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/c0e9027f-45ea-41ab-a1d4-122eaaaf19a8.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a72bd8ec8ce31ceff",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "find /Users/thiago/gtf-reflected-router/apps/server/src/modules -type f -name \"*.ts\" | head -20"
+    },
+    "tool_use_id": "toolu_01UShwdL6aFktuU91Tkp76nY"
+  },
+  {
+    "session_id": "c0e9027f-45ea-41ab-a1d4-122eaaaf19a8",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/c0e9027f-45ea-41ab-a1d4-122eaaaf19a8.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a72bd8ec8ce31ceff",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "ls -la /Users/thiago/gtf-reflected-router/apps/server/src/"
+    },
+    "tool_use_id": "toolu_01B2qhUJBrMLeXDiufbN4SB4"
+  },
+  {
+    "session_id": "c0e9027f-45ea-41ab-a1d4-122eaaaf19a8",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/c0e9027f-45ea-41ab-a1d4-122eaaaf19a8.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a72bd8ec8ce31ceff",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "ls -la /Users/thiago/gtf-reflected-router/apps/server/src/core/"
+    },
+    "tool_use_id": "toolu_019fAMDvuKTVSHKLnqYvxZUQ"
+  },
+  {
+    "session_id": "c0e9027f-45ea-41ab-a1d4-122eaaaf19a8",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/c0e9027f-45ea-41ab-a1d4-122eaaaf19a8.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a72bd8ec8ce31ceff",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/src/core/plugins/controller-plugin.ts"
+    },
+    "tool_use_id": "toolu_01WbBGjeMqmwPx8sYqVm4jXU"
+  },
+  {
+    "session_id": "c0e9027f-45ea-41ab-a1d4-122eaaaf19a8",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/c0e9027f-45ea-41ab-a1d4-122eaaaf19a8.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a72bd8ec8ce31ceff",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/src/modules/users/users.controller.ts"
+    },
+    "tool_use_id": "toolu_017DBNo3he8RKYdCizRTXtky"
+  },
+  {
+    "session_id": "c0e9027f-45ea-41ab-a1d4-122eaaaf19a8",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/c0e9027f-45ea-41ab-a1d4-122eaaaf19a8.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a72bd8ec8ce31ceff",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/src/modules/auth/auth.controller.ts"
+    },
+    "tool_use_id": "toolu_01FBJPqSRWSwfCMd7G7tyqDC"
+  },
+  {
+    "session_id": "c0e9027f-45ea-41ab-a1d4-122eaaaf19a8",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/c0e9027f-45ea-41ab-a1d4-122eaaaf19a8.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a72bd8ec8ce31ceff",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/src/index.ts"
+    },
+    "tool_use_id": "toolu_01D4uLZC9SXkPR1mKzwVejB7"
+  },
+  {
+    "session_id": "c0e9027f-45ea-41ab-a1d4-122eaaaf19a8",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/c0e9027f-45ea-41ab-a1d4-122eaaaf19a8.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a72bd8ec8ce31ceff",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/src/registry.ts"
+    },
+    "tool_use_id": "toolu_013yGjsTruMgxKfBigBUgYoQ"
+  },
+  {
+    "session_id": "c0e9027f-45ea-41ab-a1d4-122eaaaf19a8",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/c0e9027f-45ea-41ab-a1d4-122eaaaf19a8.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a72bd8ec8ce31ceff",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/src/modules/users/users.service.ts"
+    },
+    "tool_use_id": "toolu_01PnaE6QPSMd7Xthy6mL8iD5"
+  },
+  {
+    "session_id": "c0e9027f-45ea-41ab-a1d4-122eaaaf19a8",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/c0e9027f-45ea-41ab-a1d4-122eaaaf19a8.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a72bd8ec8ce31ceff",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/src/modules/auth/auth.service.ts"
+    },
+    "tool_use_id": "toolu_01NwSZ9wEGxbYdQq8tGH9jpZ"
+  },
+  {
+    "session_id": "c0e9027f-45ea-41ab-a1d4-122eaaaf19a8",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/c0e9027f-45ea-41ab-a1d4-122eaaaf19a8.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a72bd8ec8ce31ceff",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/src/core/interceptors/logging.interceptor.ts"
+    },
+    "tool_use_id": "toolu_01KpgszapKHP2fy5w4c8reAX"
+  },
+  {
+    "session_id": "c0e9027f-45ea-41ab-a1d4-122eaaaf19a8",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/c0e9027f-45ea-41ab-a1d4-122eaaaf19a8.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/src/discovery.ts"
+    },
+    "tool_use_id": "toolu_012VC2QuVRm6ktYsrGZchtwY"
+  },
+  {
+    "session_id": "c0e9027f-45ea-41ab-a1d4-122eaaaf19a8",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/c0e9027f-45ea-41ab-a1d4-122eaaaf19a8.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/src/core/plugins/controller-plugin.ts"
+    },
+    "tool_use_id": "toolu_01FB6eKmViRtGq6hTmDXykGn"
+  },
+  {
+    "session_id": "c0e9027f-45ea-41ab-a1d4-122eaaaf19a8",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/c0e9027f-45ea-41ab-a1d4-122eaaaf19a8.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Edit",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/src/index.ts",
+      "old_string": "import { controllerPlugin } from \"./core/plugins/controller-plugin\";\nimport { UserController } from \"./modules/users/users.controller\";\nimport { AuthController } from \"./modules/auth/auth.controller\";",
+      "new_string": "import path from \"node:path\";\nimport { controllerPlugin } from \"./core/plugins/controller-plugin\";\nimport { discoverControllers } from \"gtf-reflected-router\";",
+      "replace_all": false
+    },
+    "tool_use_id": "toolu_01SPoHQSqiWKs27Y2FsfGaJL"
+  },
+  {
+    "session_id": "c0e9027f-45ea-41ab-a1d4-122eaaaf19a8",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/c0e9027f-45ea-41ab-a1d4-122eaaaf19a8.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Edit",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/src/index.ts",
+      "old_string": "    // Register Controllers via our custom plugin\n    await app.register(controllerPlugin, {\n      controllers: [UserController, AuthController],\n      prefix: \"/api\",\n    });",
+      "new_string": "    // Auto-discover all *.controller.ts files under modules/\n    await discoverControllers({ cwd: path.join(__dirname, \"modules\") });\n\n    // Register Controllers via our custom plugin (uses registry automatically)\n    await app.register(controllerPlugin, { prefix: \"/api\" });",
+      "replace_all": false
+    },
+    "tool_use_id": "toolu_01USAmGx8ptNenLh6uUjaPcP"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Skill",
+    "tool_input": {
+      "skill": "research-codebase-nt"
+    },
+    "tool_use_id": "toolu_01Hq6bG9qB69ZUmwQ8kFzT9m"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "ToolSearch",
+    "tool_input": {
+      "query": "select:TaskCreate,TaskOutput",
+      "max_results": 2
+    },
+    "tool_use_id": "toolu_015TVQEwHKvjKWp3R8fvRiLt"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "TaskCreate",
+    "tool_input": {
+      "subject": "Pesquisar estrutura do projeto",
+      "description": "Explorar a estrutura completa do projeto, packages e apps",
+      "activeForm": "Pesquisando estrutura do projeto"
+    },
+    "tool_use_id": "toolu_016ZzLzF3UPdoVXrwrjviPFH"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "TaskCreate",
+    "tool_input": {
+      "subject": "Documentar package reflected (core)",
+      "description": "Documentar todos os decorators, m\u00e9todos, guards, interceptors e params do package reflected",
+      "activeForm": "Documentando package reflected"
+    },
+    "tool_use_id": "toolu_01FAGz6HhSVVJqcRC3GJpWuo"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "TaskCreate",
+    "tool_input": {
+      "subject": "Documentar app server",
+      "description": "Documentar a aplica\u00e7\u00e3o server, m\u00f3dulos, controllers e configura\u00e7\u00e3o",
+      "activeForm": "Documentando app server"
+    },
+    "tool_use_id": "toolu_01RpTdxsFozp5hYEjau9qdBF"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "TaskCreate",
+    "tool_input": {
+      "subject": "Gerar documento de pesquisa completo",
+      "description": "Sintetizar todas as descobertas em um documento de pesquisa markdown",
+      "activeForm": "Gerando documenta\u00e7\u00e3o"
+    },
+    "tool_use_id": "toolu_013o8q9CKfSTHrJDFsTkUScN"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "ToolSearch",
+    "tool_input": {
+      "query": "select:TaskUpdate",
+      "max_results": 1
+    },
+    "tool_use_id": "toolu_018YnfvAuqxpyugJt1uWf7Am"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "TaskUpdate",
+    "tool_input": {
+      "taskId": "1",
+      "status": "in_progress"
+    },
+    "tool_use_id": "toolu_015FB26VeBZaExvnTxEqB5Z2"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Agent",
+    "tool_input": {
+      "description": "Explore reflected package core",
+      "prompt": "Research and document the entire `packages/reflected/` package. This is a TypeScript framework for building HTTP servers with decorators. I need you to document EVERYTHING:\n\n1. Read ALL source files in `packages/reflected/src/` - every single one\n2. Read the `packages/reflected/package.json` for dependencies and exports\n3. Read any test files in `packages/reflected/__tests__/` or similar\n\nFor each file, document:\n- Every exported function, class, decorator, type, and interface\n- Function signatures with parameter types and return types\n- What each decorator does and how to use it\n- How the pieces connect together (e.g., how decorators store metadata, how discovery works, how the container resolves dependencies)\n\nFocus especially on:\n- `decorators.ts` - all decorators (@Controller, @Get, @Post, etc.)\n- `container.ts` - dependency injection container\n- `discovery.ts` - route/controller discovery\n- `guards.ts` - guard system\n- `interceptors.ts` - interceptor system\n- `params.ts` - parameter decorators (@Body, @Query, @Param, etc.)\n- `index.ts` - public API exports\n\nReturn a comprehensive technical documentation of every method, decorator, type, and pattern in this package. Include code examples where helpful.",
+      "subagent_type": "feature-dev:code-explorer",
+      "run_in_background": true
+    },
+    "tool_use_id": "toolu_01XCbLSmD2oYhMbAekWhcmEw"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "aa5fb64acb939d94d",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Glob",
+    "tool_input": {
+      "pattern": "packages/reflected/**/*"
+    },
+    "tool_use_id": "toolu_015UgfYLitzKsSs97ETLeCMJ"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "aa5fb64acb939d94d",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/package.json"
+    },
+    "tool_use_id": "toolu_01Qj4cGxEM6aFDCJoDmSdGc9"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Agent",
+    "tool_input": {
+      "description": "Explore server app structure",
+      "prompt": "Research and document the entire `apps/server/` application. This is a server app that uses the `reflected` package. I need you to document EVERYTHING:\n\n1. Read `apps/server/package.json` for dependencies and scripts\n2. Read `apps/server/src/index.ts` - the entry point\n3. Read ALL files in `apps/server/src/` recursively - modules, controllers, common, core, cron, etc.\n4. Read `apps/server/eslint.config.js` and any config files\n\nFor each file, document:\n- Purpose and role in the application\n- Exported classes, functions, types\n- How controllers are structured and registered\n- How modules are organized\n- How the server bootstraps and starts\n- Cron jobs configuration\n- Any middleware, guards, or interceptors used\n\nReturn a comprehensive technical documentation of the server application architecture, showing how it uses the `reflected` package in practice.",
+      "subagent_type": "feature-dev:code-explorer",
+      "run_in_background": true
+    },
+    "tool_use_id": "toolu_01QHKmZCFgXVVahX1UvYpm2y"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "aa5fb64acb939d94d",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/src/index.ts"
+    },
+    "tool_use_id": "toolu_01ETagZTtBM5PrK8wtAbsAVH"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "aa5fb64acb939d94d",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/src/types.ts"
+    },
+    "tool_use_id": "toolu_01XPTRos9bh32WEyynBDZjWa"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "aa5fb64acb939d94d",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/src/metadata-keys.ts"
+    },
+    "tool_use_id": "toolu_01TzF3PLrCKgrKipaf7pDDqx"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a983a39da27c31504",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/package.json"
+    },
+    "tool_use_id": "toolu_016Z6q8wR3dmrLVF7Sm9CDvz"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a983a39da27c31504",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Glob",
+    "tool_input": {
+      "pattern": "apps/server/src/**/*",
+      "path": "/Users/thiago/gtf-reflected-router"
+    },
+    "tool_use_id": "toolu_01J9XNvzchm5DfiVX4NB7mjX"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Agent",
+    "tool_input": {
+      "description": "Explore project root config",
+      "prompt": "Thoroughly explore the root-level configuration of this monorepo project at /Users/thiago/gtf-reflected-router. I need:\n\n1. Read the root `package.json` - scripts, workspaces, dependencies\n2. Read `turbo.json` - turborepo configuration\n3. Read `pnpm-lock.yaml` first 50 lines to confirm package manager\n4. Read `tsconfig.json` or any root TypeScript config\n5. Read `.gitignore`\n6. Read any `README.md` at the root\n7. List ALL directories and files at the root level\n8. Check for any `.env.example` or configuration templates\n\nReturn a complete picture of the monorepo setup: workspaces, build pipeline, tooling, and how packages relate to each other.",
+      "subagent_type": "Explore",
+      "run_in_background": true
+    },
+    "tool_use_id": "toolu_01CkfYrjNCGHt2yCvDAptPMM"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a983a39da27c31504",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/src/index.ts"
+    },
+    "tool_use_id": "toolu_01VyJE9sU2ViJQD8HbzPsaEH"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "aa5fb64acb939d94d",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/src/decorators.ts"
+    },
+    "tool_use_id": "toolu_01AA9BRHe85J2RsmfwUuYnUV"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a983a39da27c31504",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/src/cron/index.ts"
+    },
+    "tool_use_id": "toolu_016R1KJyKQvJdcsJ3m8de1Z7"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a983a39da27c31504",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/src/core/plugins/controller-plugin.ts"
+    },
+    "tool_use_id": "toolu_014vhsQzUjqU48VsLbrwbHsP"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a04d7a6f0a1fd2707",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/package.json"
+    },
+    "tool_use_id": "toolu_012psr2XvZ9r83KyTxLcnkBJ"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a04d7a6f0a1fd2707",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/turbo.json"
+    },
+    "tool_use_id": "toolu_019MqBhCbq2F3HjyR9S68fJx"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "aa5fb64acb939d94d",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/src/container.ts"
+    },
+    "tool_use_id": "toolu_01JRWVBfyyVd4kyF9Pqdg1we"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a04d7a6f0a1fd2707",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/pnpm-lock.yaml",
+      "limit": 50
+    },
+    "tool_use_id": "toolu_016Pe7F69oBczEUPk1BfZtQZ"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a04d7a6f0a1fd2707",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/tsconfig.json"
+    },
+    "tool_use_id": "toolu_01HVQKXKryEQXrpz5LrQJ9cZ"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a04d7a6f0a1fd2707",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/.gitignore"
+    },
+    "tool_use_id": "toolu_01XFhrdEB8mDicyDPHx9i3xw"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a04d7a6f0a1fd2707",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/README.md"
+    },
+    "tool_use_id": "toolu_017AYggcP3jhX59Cd5nVgjm4"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a04d7a6f0a1fd2707",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "ls -la /Users/thiago/gtf-reflected-router",
+      "description": "List all files and directories at root level"
+    },
+    "tool_use_id": "toolu_01QMH3sncxTr5XdmcMxrcKaS"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "aa5fb64acb939d94d",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/src/discovery.ts"
+    },
+    "tool_use_id": "toolu_01BsGHHoUJY2j3LPCwzoauqG"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a983a39da27c31504",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/src/common/users.data.ts"
+    },
+    "tool_use_id": "toolu_01V81yGpn8NbxqSp8naj9Mic"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a04d7a6f0a1fd2707",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "find /Users/thiago/gtf-reflected-router -maxdepth 1 -name \".env*\" -o -name \"*.example\"",
+      "description": "Search for environment and example configuration files"
+    },
+    "tool_use_id": "toolu_014TC2AVUDLExVj73XyXiwox"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a04d7a6f0a1fd2707",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/pnpm-workspace.yaml"
+    },
+    "tool_use_id": "toolu_01JVamVvznN7JyrsTkTt4BYN"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a983a39da27c31504",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/src/core/guards/auth.guard.ts"
+    },
+    "tool_use_id": "toolu_01Lw1qH3ShC3119Qjmd7z7BQ"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a04d7a6f0a1fd2707",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/.prettierrc"
+    },
+    "tool_use_id": "toolu_012tDyqb4HKgnTLATCaDnUq6"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a983a39da27c31504",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/src/core/interceptors/logging.interceptor.ts"
+    },
+    "tool_use_id": "toolu_01FstUxx2J1wVvHdre71SaMb"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a04d7a6f0a1fd2707",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "ls -la /Users/thiago/gtf-reflected-router/apps && ls -la /Users/thiago/gtf-reflected-router/packages",
+      "description": "List workspace directories"
+    },
+    "tool_use_id": "toolu_0151MUSYwSfG4idzsBHaUeyZ"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "aa5fb64acb939d94d",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/src/guards.ts"
+    },
+    "tool_use_id": "toolu_01KD98FTC6HMKmw4jz9sHioV"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "aa5fb64acb939d94d",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/src/interceptors.ts"
+    },
+    "tool_use_id": "toolu_01DZBb1NSdwkB8fC5UenWsz6"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a04d7a6f0a1fd2707",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/package.json"
+    },
+    "tool_use_id": "toolu_01NncGaZKrrE5tr5jG2uyv72"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a04d7a6f0a1fd2707",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/package.json"
+    },
+    "tool_use_id": "toolu_01J6DJCUggGtFzrnawaX1rv3"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a04d7a6f0a1fd2707",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/eslint-config/package.json"
+    },
+    "tool_use_id": "toolu_01SVc5vLcxF5JrA66Hh28WT9"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a04d7a6f0a1fd2707",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/typescript-config/package.json"
+    },
+    "tool_use_id": "toolu_016yRczZj5sEuWa8sR5YqGrG"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a983a39da27c31504",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/src/modules/auth/auth.service.ts"
+    },
+    "tool_use_id": "toolu_011rugc1uE5uEeP52Ldycr9C"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a04d7a6f0a1fd2707",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "find /Users/thiago/gtf-reflected-router/packages/typescript-config -type f | head -20",
+      "description": "List files in typescript-config package"
+    },
+    "tool_use_id": "toolu_01JBXoSYKq7ign2KbuWMfhQA"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a983a39da27c31504",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/src/modules/auth/auth.controller.ts"
+    },
+    "tool_use_id": "toolu_01TyZGWVMnpLSJNQQGLH6Jhg"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a04d7a6f0a1fd2707",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "find /Users/thiago/gtf-reflected-router/packages/eslint-config -type f | head -20",
+      "description": "List files in eslint-config package"
+    },
+    "tool_use_id": "toolu_01WTrtWJDrJUmj2mo8bi7Sxn"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a04d7a6f0a1fd2707",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/.prettierignore"
+    },
+    "tool_use_id": "toolu_01LiLj2YiVtPciTAptoYxsZd"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a983a39da27c31504",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/src/modules/users/users.controller.ts"
+    },
+    "tool_use_id": "toolu_01R9TtUcZU97KWzzb67mqdym"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "aa5fb64acb939d94d",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/src/registry.ts"
+    },
+    "tool_use_id": "toolu_01JzZs2cvA3cUwXLTX4sTAKq"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "aa5fb64acb939d94d",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/src/lifecycle.ts"
+    },
+    "tool_use_id": "toolu_012ZnarVLPW2BCUimZm8qgFX"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a04d7a6f0a1fd2707",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/typescript-config/base.json"
+    },
+    "tool_use_id": "toolu_01Gn2WrPb2XTtsm5H5UKnShw"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a04d7a6f0a1fd2707",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/eslint-config/base.js"
+    },
+    "tool_use_id": "toolu_011pUDeWzBpUn4RAGEMDnk96"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a04d7a6f0a1fd2707",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "ls -la /Users/thiago/gtf-reflected-router/apps/server/",
+      "description": "List contents of server app"
+    },
+    "tool_use_id": "toolu_01FyZkem7DwEppnfWerdorbc"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a983a39da27c31504",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/src/modules/users/users.service.ts"
+    },
+    "tool_use_id": "toolu_01N6Qi7jJn4KuBUyU2YhKz5i"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a983a39da27c31504",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/src/modules/address/address.controller.ts"
+    },
+    "tool_use_id": "toolu_01J8TKnAMpGjLjBK7WNjR9u1"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a04d7a6f0a1fd2707",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/tsconfig.json"
+    },
+    "tool_use_id": "toolu_01NnE2dcMcy6tvLCyNnXNUzx"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a04d7a6f0a1fd2707",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/.swcrc"
+    },
+    "tool_use_id": "toolu_01U6mkf42NXJkPAGmY8FsS3d"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a04d7a6f0a1fd2707",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/jest.config.js"
+    },
+    "tool_use_id": "toolu_017Ldwr4bKbZntfnch8JXRTj"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "aa5fb64acb939d94d",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/src/cron.ts"
+    },
+    "tool_use_id": "toolu_01NN3fZaq1DEPEZ6xWV6HCsB"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a04d7a6f0a1fd2707",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "ls -la /Users/thiago/gtf-reflected-router/packages/reflected/ | head -30",
+      "description": "List contents of reflected package"
+    },
+    "tool_use_id": "toolu_01GKrvUvYeWkjDFNcTL7twuH"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a04d7a6f0a1fd2707",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/tsconfig.json"
+    },
+    "tool_use_id": "toolu_01JJVSmq1SCzZ6ceRGsaDmdg"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a04d7a6f0a1fd2707",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/.swcrc"
+    },
+    "tool_use_id": "toolu_01DAxJmkSysaUdpMHU53dhvP"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a04d7a6f0a1fd2707",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/jest.config.js"
+    },
+    "tool_use_id": "toolu_01CzJikuU2JdxQygLqFQKeii"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a04d7a6f0a1fd2707",
+    "agent_type": "Explore",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "cat /Users/thiago/gtf-reflected-router/.npmrc",
+      "description": "Read npmrc configuration"
+    },
+    "tool_use_id": "toolu_01Kjnuy7Tr1tQ4HaBDUvLsQc"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "aa5fb64acb939d94d",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/__tests__/decorators/decorators.test.ts"
+    },
+    "tool_use_id": "toolu_017WrVGv2kQvzEqpQFN7PYfC"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "aa5fb64acb939d94d",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/__tests__/container/container.test.ts"
+    },
+    "tool_use_id": "toolu_01TLJuzvtNCGY29YJHRxn4cX"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a983a39da27c31504",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/src/modules/users/__tests__/user.controller.test.ts"
+    },
+    "tool_use_id": "toolu_01X9huEinnEtLC26BnQJGtG4"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a983a39da27c31504",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/src/core/plugins/__tests__/controller-plugin.test.ts"
+    },
+    "tool_use_id": "toolu_01Ag2ooX1VgQycDJAxfvnnJp"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a983a39da27c31504",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/eslint.config.js"
+    },
+    "tool_use_id": "toolu_01B4WMrCWSFY2jFYJ2Vjyy7E"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a983a39da27c31504",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Glob",
+    "tool_input": {
+      "pattern": "apps/server/*.{json,ts,js}",
+      "path": "/Users/thiago/gtf-reflected-router"
+    },
+    "tool_use_id": "toolu_01PVEF1a6Y77q5GSLXNcwMDX"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "aa5fb64acb939d94d",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/__tests__/discovery/discovery.test.ts"
+    },
+    "tool_use_id": "toolu_01FNguw1xPoN31XvhwFk6g9a"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "aa5fb64acb939d94d",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/__tests__/guards/guards.test.ts"
+    },
+    "tool_use_id": "toolu_01KSsLnUhArNN87yVGFq4xpk"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a983a39da27c31504",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/tsconfig.json"
+    },
+    "tool_use_id": "toolu_01UdzuCQdBKnbjt4bKKsGSWz"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a983a39da27c31504",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/jest.config.js"
+    },
+    "tool_use_id": "toolu_014VZ1Ram2vVGLKz5boGESHM"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a983a39da27c31504",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/jest.setup.js"
+    },
+    "tool_use_id": "toolu_0173UXh5jWASLNu4oaBnaWzk"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "aa5fb64acb939d94d",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/__tests__/interceptors/interceptors.test.ts"
+    },
+    "tool_use_id": "toolu_01KdudAzA4e66nQUEzJMbKfs"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "aa5fb64acb939d94d",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/__tests__/params/params.test.ts"
+    },
+    "tool_use_id": "toolu_01XShVjk8ztpU3VqCn11AtYG"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "a983a39da27c31504",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/src/index.ts"
+    },
+    "tool_use_id": "toolu_01EiEbjCTJ7oZHWBrtawC2Dx"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "aa5fb64acb939d94d",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/__tests__/params/zod-params.test.ts"
+    },
+    "tool_use_id": "toolu_01PiFRKzz4W2uJ2PAyWAmxdj"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "agent_id": "aa5fb64acb939d94d",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/__tests__/cron/cron.test.ts"
+    },
+    "tool_use_id": "toolu_01H24mw261wrSLrUBnbM1mkm"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/private/tmp/claude-501/-Users-thiago-gtf-reflected-router/edd879e9-e318-41eb-b303-8b34244ee282/tasks/aa5fb64acb939d94d.output"
+    },
+    "tool_use_id": "toolu_01H1iJ9NftLPx3SiV5S8wBPv"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/private/tmp/claude-501/-Users-thiago-gtf-reflected-router/edd879e9-e318-41eb-b303-8b34244ee282/tasks/aa5fb64acb939d94d.output",
+      "limit": 200
+    },
+    "tool_use_id": "toolu_01HUozv8uVE4YVDrzBBzVtN5"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/private/tmp/claude-501/-Users-thiago-gtf-reflected-router/edd879e9-e318-41eb-b303-8b34244ee282/tasks/aa5fb64acb939d94d.output",
+      "offset": 1,
+      "limit": 80
+    },
+    "tool_use_id": "toolu_01Kcp2BNPXTcAFyGsLtB4BDx"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/src/decorators.ts"
+    },
+    "tool_use_id": "toolu_01NTa7i1aGkDJ2cXegCeiGYL"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/src/container.ts"
+    },
+    "tool_use_id": "toolu_0154S5AEmnM21ExhF3kKvDn7"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/src/discovery.ts"
+    },
+    "tool_use_id": "toolu_01Qnb11zUAVf2zVC4vLaBoBo"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/src/guards.ts"
+    },
+    "tool_use_id": "toolu_01Ca4qiysT9PSKL7tiEG2wiX"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/src/interceptors.ts"
+    },
+    "tool_use_id": "toolu_014vZFNii7KTQujy6Uf2r2rm"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/src/params.ts"
+    },
+    "tool_use_id": "toolu_01JGDE7xmfJv35NYsUhw6hK2"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/src/index.ts"
+    },
+    "tool_use_id": "toolu_01VzzFz4b5aBgZJWW75QPBqj"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/src/types.ts"
+    },
+    "tool_use_id": "toolu_01C3DyXJ118VgFW4buAoQQmE"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Glob",
+    "tool_input": {
+      "pattern": "packages/reflected/src/**/*.ts",
+      "path": "/Users/thiago/gtf-reflected-router"
+    },
+    "tool_use_id": "toolu_01N67NfFXPZfswGDr8pMTaDy"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/src/cron.ts"
+    },
+    "tool_use_id": "toolu_01QJQaPo7WDeNdTmBkix43hW"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/src/lifecycle.ts"
+    },
+    "tool_use_id": "toolu_01GBTEBSsRZxsZLhhdxzCRn4"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/src/registry.ts"
+    },
+    "tool_use_id": "toolu_01TuumNWRPqds7YdPxf6UTe5"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/packages/reflected/src/metadata-keys.ts"
+    },
+    "tool_use_id": "toolu_013H2wmVKdH1ZqkrchuUGRFW"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Glob",
+    "tool_input": {
+      "pattern": "apps/server/src/**/*.ts",
+      "path": "/Users/thiago/gtf-reflected-router"
+    },
+    "tool_use_id": "toolu_01FdioTYwXW5jNTwWqjgwSC4"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/src/index.ts"
+    },
+    "tool_use_id": "toolu_017vrS1tZYoYq48GrJkMmDbs"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/src/core/plugins/controller-plugin.ts"
+    },
+    "tool_use_id": "toolu_01W2DdW8msw9zJ5TpWJwSzsg"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/src/modules/users/users.controller.ts"
+    },
+    "tool_use_id": "toolu_01HCQ86jGMvkXF6gkfuuSaQN"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/src/modules/auth/auth.controller.ts"
+    },
+    "tool_use_id": "toolu_01K9PRd7NqtVfyTjpWk9Uu4R"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/src/core/guards/auth.guard.ts"
+    },
+    "tool_use_id": "toolu_011CuM39Jm3MQPxGAXWFLEM2"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/src/core/interceptors/logging.interceptor.ts"
+    },
+    "tool_use_id": "toolu_01R6C4i2vErBnkJwJJ25Kbdk"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/src/modules/users/users.service.ts"
+    },
+    "tool_use_id": "toolu_01AueUb4HdwcyXXdMKv5xHJ8"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/src/modules/auth/auth.service.ts"
+    },
+    "tool_use_id": "toolu_01FRPBZzwQmxybUBAKsLAE1m"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/src/cron/index.ts"
+    },
+    "tool_use_id": "toolu_01CkwbUpsYB4J7CW9f1KP9KK"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/src/modules/address/address.controller.ts"
+    },
+    "tool_use_id": "toolu_016MWU8NiEj4ZFspV5kdtcdJ"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Read",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/apps/server/src/common/users.data.ts"
+    },
+    "tool_use_id": "toolu_01DEfFkXrXXvCEDM68jbmBXQ"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "TaskUpdate",
+    "tool_input": {
+      "taskId": "1",
+      "status": "completed"
+    },
+    "tool_use_id": "toolu_014jvxMWtjAiJBeXT7Auid9p"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "TaskUpdate",
+    "tool_input": {
+      "taskId": "2",
+      "status": "in_progress"
+    },
+    "tool_use_id": "toolu_01PKRPYzEnYdMpJD9Snt9TSC"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "git log -1 --format=\"%H %an %ae\" && git branch --show-current",
+      "description": "Get git metadata for documentation"
+    },
+    "tool_use_id": "toolu_017GmuDfQRzu3BskkAGANFTh"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "mkdir -p /Users/thiago/gtf-reflected-router/docs",
+      "description": "Create docs directory"
+    },
+    "tool_use_id": "toolu_01MtZJgkSJyYToLofSWaprvU"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "TaskUpdate",
+    "tool_input": {
+      "taskId": "2",
+      "status": "completed"
+    },
+    "tool_use_id": "toolu_01BBMbzrksCefTajdm5MnHXy"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "TaskUpdate",
+    "tool_input": {
+      "taskId": "3",
+      "status": "completed"
+    },
+    "tool_use_id": "toolu_01CYyUh7W2suFTQpdPMY9wYb"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "TaskUpdate",
+    "tool_input": {
+      "taskId": "4",
+      "status": "in_progress"
+    },
+    "tool_use_id": "toolu_01BcKDWWytAGCh4cJHELzG6N"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Write",
+    "tool_input": {
+      "file_path": "/Users/thiago/gtf-reflected-router/docs/documentation.md",
+      "content": "# gtf-reflected-router \u2014 Documenta\u00e7\u00e3o Completa\n\n> **Pacote npm:** `gtf-reflected-router` v1.0.12\n> **Git Commit:** `6aeda1b093983addeae151f84d7545c685e06a40`\n> **Branch:** `main`\n> **Data:** 2026-03-27\n\n---\n\n## \u00cdndice\n\n1. [Vis\u00e3o Geral](#1-vis\u00e3o-geral)\n2. [Instala\u00e7\u00e3o & Configura\u00e7\u00e3o](#2-instala\u00e7\u00e3o--configura\u00e7\u00e3o)\n3. [Estrutura do Monorepo](#3-estrutura-do-monorepo)\n4. [API de Decorators](#4-api-de-decorators)\n   - [@Controller](#controller)\n   - [HTTP Methods: @Get, @Post, @Put, @Delete, @Patch, @Head, @Options](#http-methods)\n   - [@Route (gen\u00e9rico)](#route-gen\u00e9rico)\n   - [@HttpCode](#httpcode)\n   - [@Injectable](#injectable)\n   - [@UseGuards](#useguards)\n   - [@UseInterceptors](#useinterceptors)\n   - [@CronJob](#cronjob)\n5. [Decorators de Par\u00e2metros](#5-decorators-de-par\u00e2metros)\n   - [@Body](#body)\n   - [@Query](#query)\n   - [@Param](#param)\n   - [@Headers](#headers)\n   - [@Req / @Res](#req--res)\n   - [createParamDecorator](#createparamdecorator)\n6. [Container de Inje\u00e7\u00e3o de Depend\u00eancia](#6-container-de-inje\u00e7\u00e3o-de-depend\u00eancia)\n7. [Guards](#7-guards)\n8. [Interceptors](#8-interceptors)\n9. [Lifecycle Hooks](#9-lifecycle-hooks)\n10. [Auto-Discovery de Controllers](#10-auto-discovery-de-controllers)\n11. [Registry](#11-registry)\n12. [Cron Jobs](#12-cron-jobs)\n13. [Controller Plugin (Fastify)](#13-controller-plugin-fastify)\n14. [Tipos e Interfaces](#14-tipos-e-interfaces)\n15. [Chaves de Metadados](#15-chaves-de-metadados)\n16. [Exemplo Completo (app/server)](#16-exemplo-completo-appserver)\n17. [Fluxo de Execu\u00e7\u00e3o de uma Requisi\u00e7\u00e3o](#17-fluxo-de-execu\u00e7\u00e3o-de-uma-requisi\u00e7\u00e3o)\n18. [Padr\u00f5es e Dicas](#18-padr\u00f5es-e-dicas)\n\n---\n\n## 1. Vis\u00e3o Geral\n\n`gtf-reflected-router` \u00e9 uma biblioteca TypeScript que adiciona uma camada declarativa baseada em decorators ao **Fastify 5**. Inspirada na arquitetura do NestJS, ela permite definir rotas, valida\u00e7\u00f5es, guards, interceptors e cron jobs usando decorators sem abrir m\u00e3o da performance nativa do Fastify.\n\n**Funcionalidades principais:**\n- Decorators de rotas HTTP (`@Get`, `@Post`, `@Put`, `@Delete`, `@Patch`, `@Head`, `@Options`)\n- Inje\u00e7\u00e3o de depend\u00eancia (DI) via `@Injectable` e `Container`\n- Guards de autoriza\u00e7\u00e3o via `@UseGuards`\n- Interceptors (before/after handler) via `@UseInterceptors`\n- Decorators de par\u00e2metros com valida\u00e7\u00e3o Zod integrada\n- Decorators customizados de par\u00e2metros via `createParamDecorator`\n- Auto-discovery de controllers via glob\n- Cron jobs declarativos via `@CronJob`\n- Lifecycle hooks: `OnApplicationBootstrap` e `OnApplicationShutdown`\n\n---\n\n## 2. Instala\u00e7\u00e3o & Configura\u00e7\u00e3o\n\n```bash\npnpm add gtf-reflected-router reflect-metadata fastify\n# Zod \u00e9 opcional (peer dependency)\npnpm add zod\n```\n\n**`tsconfig.json` obrigat\u00f3rio:**\n```json\n{\n  \"compilerOptions\": {\n    \"experimentalDecorators\": true,\n    \"emitDecoratorMetadata\": true,\n    \"target\": \"ES2022\"\n  }\n}\n```\n\n**Importar `reflect-metadata` no entry point (obrigat\u00f3rio, antes de qualquer import):**\n```typescript\nimport \"reflect-metadata\";\n```\n\n---\n\n## 3. Estrutura do Monorepo\n\n```\ngtf-reflected-router/\n\u251c\u2500\u2500 packages/\n\u2502   \u251c\u2500\u2500 reflected/               # Biblioteca principal (gtf-reflected-router)\n\u2502   \u2502   \u2514\u2500\u2500 src/\n\u2502   \u2502       \u251c\u2500\u2500 index.ts         # Entrypoint p\u00fablico \u2014 re-exporta tudo\n\u2502   \u2502       \u251c\u2500\u2500 decorators.ts    # @Controller, @Route, @Get/@Post/..., @HttpCode\n\u2502   \u2502       \u251c\u2500\u2500 container.ts     # DIContainer, @Injectable\n\u2502   \u2502       \u251c\u2500\u2500 discovery.ts     # discoverControllers(), getRegisteredControllers()\n\u2502   \u2502       \u251c\u2500\u2500 guards.ts        # @UseGuards, getGuards(), CanActivate\n\u2502   \u2502       \u251c\u2500\u2500 interceptors.ts  # @UseInterceptors, getInterceptors(), Interceptor\n\u2502   \u2502       \u251c\u2500\u2500 lifecycle.ts     # OnApplicationBootstrap, OnApplicationShutdown\n\u2502   \u2502       \u251c\u2500\u2500 params.ts        # @Body, @Query, @Param, @Headers, @Req, @Res, createParamDecorator\n\u2502   \u2502       \u251c\u2500\u2500 registry.ts      # ControllerRegistry singleton\n\u2502   \u2502       \u251c\u2500\u2500 cron.ts          # @CronJob, CRON_PATTERNS, executeCronJobSafely\n\u2502   \u2502       \u251c\u2500\u2500 types.ts         # Tipos, enums, interfaces\n\u2502   \u2502       \u2514\u2500\u2500 metadata-keys.ts # Symbol.for() keys de metadados\n\u2502   \u251c\u2500\u2500 eslint-config/           # Configura\u00e7\u00e3o ESLint compartilhada\n\u2502   \u2514\u2500\u2500 typescript-config/       # Configura\u00e7\u00e3o TypeScript compartilhada\n\u2514\u2500\u2500 apps/\n    \u2514\u2500\u2500 server/                  # App de demonstra\u00e7\u00e3o / refer\u00eancia\n        \u2514\u2500\u2500 src/\n            \u251c\u2500\u2500 index.ts                       # Bootstrap do servidor\n            \u251c\u2500\u2500 common/users.data.ts           # Dados mock\n            \u251c\u2500\u2500 core/\n            \u2502   \u251c\u2500\u2500 plugins/controller-plugin.ts  # Plugin Fastify que aplica tudo\n            \u2502   \u251c\u2500\u2500 guards/auth.guard.ts           # Exemplo de guard\n            \u2502   \u2514\u2500\u2500 interceptors/logging.interceptor.ts  # Exemplo de interceptor\n            \u251c\u2500\u2500 modules/\n            \u2502   \u251c\u2500\u2500 users/users.controller.ts\n            \u2502   \u251c\u2500\u2500 users/users.service.ts\n            \u2502   \u251c\u2500\u2500 auth/auth.controller.ts\n            \u2502   \u251c\u2500\u2500 auth/auth.service.ts\n            \u2502   \u2514\u2500\u2500 address/address.controller.ts\n            \u2514\u2500\u2500 cron/index.ts                  # Exemplo de cron job\n```\n\n---\n\n## 4. API de Decorators\n\n### `@Controller`\n\n**Arquivo:** `packages/reflected/src/decorators.ts:26`\n\nClass decorator que define o prefixo de rotas e registra a classe no `Container` (singleton) e no `registry`.\n\n```typescript\nfunction Controller(prefix?: string): ClassDecorator\n```\n\n| Par\u00e2metro | Tipo | Padr\u00e3o | Descri\u00e7\u00e3o |\n|-----------|------|--------|-----------|\n| `prefix` | `string` | `\"\"` | Prefixo de URL. **Deve** come\u00e7ar com `/` se fornecido. |\n\n**Comportamento:**\n- Armazena o prefixo via `Reflect.defineMetadata(CONTROLLER_PREFIX_METADATA_KEY, prefix, target)`\n- Registra a classe no `Container` com scope `singleton`\n- Adiciona a classe ao `registry` global\n\n**Exemplo:**\n```typescript\n@Controller(\"/users\")\nclass UserController {\n  // rotas ser\u00e3o montadas em /users/*\n}\n```\n\n**Valida\u00e7\u00e3o:** Lan\u00e7a `Error` se o prefixo n\u00e3o come\u00e7ar com `/`.\n\n---\n\n### HTTP Methods\n\n**Arquivo:** `packages/reflected/src/decorators.ts:82\u2013112`\n\nTodos s\u00e3o aliases do decorator gen\u00e9rico `@Route`:\n\n```typescript\nGet(path: string, options?: Omit<RouteOptions, \"method\" | \"url\" | \"handler\">): MethodDecorator\nPost(path: string, options?: ...): MethodDecorator\nPut(path: string, options?: ...): MethodDecorator\nDelete(path: string, options?: ...): MethodDecorator\nPatch(path: string, options?: ...): MethodDecorator\nHead(path: string, options?: ...): MethodDecorator\nOptions(path: string, options?: ...): MethodDecorator\n```\n\n| Par\u00e2metro | Tipo | Descri\u00e7\u00e3o |\n|-----------|------|-----------|\n| `path` | `string` | Caminho relativo ao prefixo do controller. **Deve** come\u00e7ar com `/`. |\n| `options` | `Omit<RouteOptions, \"method\" \\| \"url\" \\| \"handler\">` | Op\u00e7\u00f5es Fastify: `schema`, `preHandler`, `onSend`, etc. |\n\n**Exemplo:**\n```typescript\n@Get(\"/\", {\n  schema: {\n    tags: [\"users\"],\n    summary: \"Lista todos os usu\u00e1rios\",\n    response: { 200: { type: \"array\" } }\n  }\n})\nasync getUsers() {\n  return this.usersService.findAll();\n}\n\n@Post(\"/:id/action\", {\n  schema: { body: { type: \"object\" } }\n})\nasync doAction(@Param(\"id\") id: string, @Body() body: unknown) { ... }\n```\n\n---\n\n### `@Route` (gen\u00e9rico)\n\n**Arquivo:** `packages/reflected/src/decorators.ts:41`\n\nDecorator de m\u00e9todo base. Os helpers `@Get`, `@Post`, etc. s\u00e3o wrappers deste.\n\n```typescript\nfunction Route(\n  method: string,\n  path: string,\n  options?: Omit<RouteOptions, \"method\" | \"url\" | \"handler\">\n): MethodDecorator\n```\n\n**Armazena** na lista `ROUTES_METADATA_KEY` do constructor:\n```typescript\ninterface RouteMetadata {\n  method: HttpMethod;  // \"GET\" | \"POST\" | \"PUT\" | \"DELETE\" | \"PATCH\" | \"HEAD\" | \"OPTIONS\"\n  path: string;\n  handler: string;     // nome do m\u00e9todo da classe\n  options?: Omit<RouteOptions, \"method\" | \"url\" | \"handler\">;\n}\n```\n\n**Valida\u00e7\u00f5es:**\n- M\u00e9todo deve ser um `HttpMethod` v\u00e1lido\n- Path deve come\u00e7ar com `/`\n- N\u00e3o permite rotas duplicadas (mesmo m\u00e9todo + path no mesmo controller)\n\n---\n\n### `@HttpCode`\n\n**Arquivo:** `packages/reflected/src/decorators.ts:176`\n\nMethod decorator que define o status HTTP de resposta.\n\n```typescript\nfunction HttpCode(statusCode: number): MethodDecorator\n```\n\n**Exemplo:**\n```typescript\n@Post(\"/\")\n@HttpCode(201)\nasync createUser(@Body() data: CreateDto) {\n  return this.service.create(data);\n}\n```\n\nO `controllerPlugin` aplica `reply.status(httpCode)` antes de retornar.\n\n---\n\n### `@Injectable`\n\n**Arquivo:** `packages/reflected/src/container.ts:71`\n\nClass decorator que registra a classe no `Container` DI.\n\n```typescript\nfunction Injectable(options?: InjectableOptions): ClassDecorator\n\ninterface InjectableOptions {\n  scope?: \"singleton\" | \"transient\";  // padr\u00e3o: \"singleton\"\n}\n```\n\n**Exemplo:**\n```typescript\n@Injectable()\nexport class UsersService {\n  async findAll() { ... }\n}\n\n@Injectable({ scope: \"transient\" })\nexport class RequestLogger { ... }\n```\n\n> **Nota:** `@Controller` j\u00e1 registra automaticamente no Container. `@Injectable` \u00e9 para services e outras classes que precisam ser injetadas mas n\u00e3o s\u00e3o controllers.\n\n---\n\n### `@UseGuards`\n\n**Arquivo:** `packages/reflected/src/guards.ts:11`\n\nClass ou method decorator que aplica guards de autoriza\u00e7\u00e3o.\n\n```typescript\nfunction UseGuards(...guards: (Constructor<CanActivate> | CanActivate)[]): ClassDecorator & MethodDecorator\n```\n\n- **No n\u00edvel de classe:** aplica a todas as rotas do controller\n- **No n\u00edvel de m\u00e9todo:** aplica apenas \u00e0quela rota\n- Guards de classe + m\u00e9todo s\u00e3o **concatenados** (classe primeiro)\n\n**Exemplo:**\n```typescript\n// Guard em m\u00e9todo espec\u00edfico\n@Delete(\"/:id\")\n@UseGuards(AuthGuard)\nasync deleteUser(@Param(\"id\") id: string) { ... }\n\n// Guard em toda a classe\n@UseGuards(AuthGuard)\n@Controller(\"/admin\")\nclass AdminController { ... }\n```\n\n---\n\n### `@UseInterceptors`\n\n**Arquivo:** `packages/reflected/src/interceptors.ts:15`\n\nClass ou method decorator que aplica interceptors (execu\u00e7\u00e3o antes e depois do handler).\n\n```typescript\nfunction UseInterceptors(...interceptors: (Constructor<Interceptor> | Interceptor)[]): ClassDecorator & MethodDecorator\n```\n\n- **No n\u00edvel de classe:** aplica a todas as rotas\n- **No n\u00edvel de m\u00e9todo:** aplica apenas \u00e0quela rota\n- Interceptors de classe + m\u00e9todo s\u00e3o **concatenados** e executados em cadeia via `reduceRight`\n\n**Exemplo:**\n```typescript\n@Injectable()\n@Controller(\"/users\")\n@UseInterceptors(LoggingInterceptor)\nexport class UserController { ... }\n```\n\n---\n\n### `@CronJob`\n\n**Arquivo:** `packages/reflected/src/cron.ts:132`\n\nMethod decorator que registra um job cron na classe.\n\n```typescript\nfunction CronJob(expression: string, options?: CronJobOptions): MethodDecorator\n```\n\n| Par\u00e2metro | Tipo | Descri\u00e7\u00e3o |\n|-----------|------|-----------|\n| `expression` | `string` | Express\u00e3o cron (5 ou 6 partes). Validada em tempo de decora\u00e7\u00e3o. |\n| `options` | `CronJobOptions` | Op\u00e7\u00f5es de configura\u00e7\u00e3o do job. |\n\n**`CronJobOptions`:**\n```typescript\ninterface CronJobOptions {\n  timezone?: string;           // Ex: \"America/Sao_Paulo\"\n  runOnInit?: boolean;         // Executar imediatamente no bootstrap (padr\u00e3o: false)\n  description?: string;        // Descri\u00e7\u00e3o do job\n  enabled?: boolean;           // Habilitar/desabilitar (padr\u00e3o: true)\n  maxConcurrency?: number;     // M\u00e1ximo de execu\u00e7\u00f5es simult\u00e2neas (padr\u00e3o: 1, min: 1)\n  timeout?: number;            // Timeout em ms (inteiro > 0)\n  onStart?: (jobName: string) => void;\n  onComplete?: (jobName: string, result?: unknown) => void;\n  onError?: (jobName: string, error: Error) => void;\n  priority?: number;           // 1\u201310 (padr\u00e3o: 5)\n  retryAttempts?: number;      // Tentativas ap\u00f3s falha (>= 0, padr\u00e3o: 0)\n  retryDelay?: number;         // Delay entre tentativas em ms (padr\u00e3o: 1000)\n}\n```\n\n**Exemplo:**\n```typescript\n@Injectable()\nexport class Cron implements OnApplicationBootstrap {\n  @CronJob(CRON_PATTERNS.DAILY_MIDNIGHT, {\n    description: \"Backup di\u00e1rio\",\n    timezone: \"America/Sao_Paulo\",\n    timeout: 10000,\n    priority: 1,\n  })\n  async dailyBackup(): Promise<void> {\n    console.log(\"Iniciando backup...\");\n  }\n}\n```\n\n---\n\n## 5. Decorators de Par\u00e2metros\n\nTodos extraem dados da requisi\u00e7\u00e3o Fastify e os injetam como argumentos do m\u00e9todo handler.\n\n**Arquivo:** `packages/reflected/src/params.ts`\n\n### `@Body`\n\n```typescript\nBody(keyOrSchema?: string | ZodLike): ParameterDecorator\n```\n\n- Sem argumento: injeta `request.body` inteiro\n- Com string: injeta `request.body[key]`\n- Com schema Zod: injeta `request.body` ap\u00f3s valida\u00e7\u00e3o Zod (400 em falha)\n\n```typescript\nasync create(@Body() data: unknown) { ... }\nasync create(@Body(\"username\") name: string) { ... }\nasync create(@Body(CreateUserSchema) data: z.infer<typeof CreateUserSchema>) { ... }\n```\n\n---\n\n### `@Query`\n\n```typescript\nQuery(keyOrSchema?: string | ZodLike): ParameterDecorator\n```\n\n- Sem argumento: injeta `request.query` inteiro\n- Com string: injeta `request.query[key]`\n- Com schema Zod: valida e injeta\n\n```typescript\nasync list(@Query(\"page\") page: string) { ... }\nasync list(@Query() filters: Record<string, string>) { ... }\n```\n\n---\n\n### `@Param`\n\n```typescript\nParam(keyOrSchema?: string | ZodLike): ParameterDecorator\n```\n\n- Sem argumento: injeta `request.params` inteiro\n- Com string: injeta `request.params[key]`\n\n```typescript\nasync getById(@Param(\"id\") id: string) { ... }\nasync get(@Param() allParams: Record<string, string>) { ... }\n```\n\n---\n\n### `@Headers`\n\n```typescript\nHeaders(keyOrSchema?: string | ZodLike): ParameterDecorator\n```\n\n- Sem argumento: injeta `request.headers` inteiro\n- Com string: injeta `request.headers[key]`\n\n```typescript\nasync secure(@Headers(\"authorization\") auth: string) { ... }\n```\n\n---\n\n### `@Req` / `@Res`\n\n```typescript\nReq(keyOrSchema?: string | ZodLike): ParameterDecorator\nRes(keyOrSchema?: string | ZodLike): ParameterDecorator\n```\n\nInjetam o objeto `FastifyRequest` ou `FastifyReply` completo.\n\n```typescript\nasync handler(@Req() req: FastifyRequest, @Res() res: FastifyReply) { ... }\n```\n\n> **Nota:** `@Request()` e `@Response()` do m\u00f3dulo `decorators` s\u00e3o **deprecated**. Use `@Req()` e `@Res()` de `params`.\n\n---\n\n### `createParamDecorator`\n\n**Arquivo:** `packages/reflected/src/params.ts:47`\n\nCria decorators de par\u00e2metro customizados.\n\n```typescript\nfunction createParamDecorator<TData = any, TResult = any>(\n  factory: CustomParamFactory<TData, TResult>\n): (data?: TData) => ParameterDecorator\n\ntype CustomParamFactory<TData, TResult> = (\n  data: TData,\n  ctx: ExecutionContext\n) => TResult | Promise<TResult>\n```\n\n**Exemplo \u2014 extrair usu\u00e1rio do token:**\n```typescript\nconst CurrentUser = createParamDecorator((data: unknown, ctx: ExecutionContext) => {\n  const request = ctx.switchToHttp().getRequest();\n  return request.user; // populado por um guard anterior\n});\n\n@Get(\"/profile\")\nasync getProfile(@CurrentUser() user: User) {\n  return user;\n}\n```\n\n---\n\n## 6. Container de Inje\u00e7\u00e3o de Depend\u00eancia\n\n**Arquivo:** `packages/reflected/src/container.ts`\n\nO `Container` \u00e9 uma inst\u00e2ncia global de `DIContainer` \u2014 um container DI com resolu\u00e7\u00e3o autom\u00e1tica de depend\u00eancias via `reflect-metadata` (`design:paramtypes`).\n\n### M\u00e9todos P\u00fablicos\n\n```typescript\nContainer.register<T>(target: Constructor<T>, options?: InjectableOptions): void\n```\nRegistra uma classe no container. Chamado automaticamente por `@Injectable` e `@Controller`.\n\n```typescript\nContainer.get<T>(target: Constructor<T>): T\n```\nResolve e retorna uma inst\u00e2ncia. Para `singleton`, retorna a mesma inst\u00e2ncia em todas as chamadas. Para `transient`, cria nova inst\u00e2ncia sempre.\n\n- Resolve depend\u00eancias do construtor recursivamente via `design:paramtypes`\n- Detecta depend\u00eancias circulares e lan\u00e7a `Error` descritivo\n- Rejeita tipos primitivos (`Number`, `String`, `Boolean`, `Object`) como depend\u00eancias\n\n```typescript\nContainer.has(target: Constructor): boolean\n```\nVerifica se uma classe est\u00e1 registrada.\n\n```typescript\nContainer.clear(): void\n```\nLimpa singletons, registry e estado de resolu\u00e7\u00e3o. \u00datil em testes.\n\n### Escopos\n\n| Scope | Comportamento |\n|-------|--------------|\n| `\"singleton\"` | Uma inst\u00e2ncia por container (padr\u00e3o) |\n| `\"transient\"` | Nova inst\u00e2ncia a cada `Container.get()` |\n\n### Exemplo de Inje\u00e7\u00e3o Autom\u00e1tica\n\n```typescript\n@Injectable()\nclass DatabaseService {\n  query(sql: string) { ... }\n}\n\n@Injectable()\nclass UserRepository {\n  constructor(private db: DatabaseService) {}  // \u2190 injetado automaticamente\n}\n\n@Injectable()\n@Controller(\"/users\")\nclass UserController {\n  constructor(private repo: UserRepository) {}  // \u2190 injetado automaticamente\n}\n```\n\n---\n\n## 7. Guards\n\n**Arquivo:** `packages/reflected/src/guards.ts`\n\nGuards controlam acesso \u00e0s rotas. Implementam a interface `CanActivate`.\n\n### Interface `CanActivate`\n\n```typescript\ninterface CanActivate {\n  canActivate(context: ExecutionContext): boolean | Promise<boolean>\n}\n```\n\n- Retorna `true` \u2192 continua o pipeline\n- Retorna `false` \u2192 resposta `403 Forbidden`\n\n### Fun\u00e7\u00e3o `getGuards`\n\n```typescript\nfunction getGuards(\n  target: object,\n  propertyKey?: string | symbol\n): (Constructor<CanActivate> | CanActivate)[]\n```\n\nRetorna guards de classe **concatenados** com guards de m\u00e9todo.\n\n### Exemplo de Guard\n\n```typescript\n@Injectable()\nexport class AuthGuard implements CanActivate {\n  async canActivate(context: ExecutionContext): Promise<boolean> {\n    const request = context.switchToHttp().getRequest();\n    const authHeader = request.headers.authorization;\n    if (!authHeader?.startsWith(\"Bearer \")) return false;\n    const token = authHeader.split(\" \")[1];\n    return Container.get(AuthService).validateToken(token);\n  }\n}\n```\n\n---\n\n## 8. Interceptors\n\n**Arquivo:** `packages/reflected/src/interceptors.ts`\n\nInterceptors envolvem a execu\u00e7\u00e3o do handler, permitindo l\u00f3gica antes e depois.\n\n### Interfaces\n\n```typescript\ninterface CallHandler {\n  handle(): Promise<unknown>\n}\n\ninterface Interceptor {\n  intercept(context: ExecutionContext, next: CallHandler): Promise<unknown>\n}\n```\n\n### Fun\u00e7\u00e3o `getInterceptors`\n\n```typescript\nfunction getInterceptors(\n  target: object,\n  propertyKey?: string | symbol\n): (Constructor<Interceptor> | Interceptor)[]\n```\n\n### Exemplo de Interceptor\n\n```typescript\n@Injectable()\nexport class LoggingInterceptor implements Interceptor {\n  async intercept(context: ExecutionContext, next: CallHandler): Promise<unknown> {\n    const request = context.switchToHttp().getRequest();\n    const now = Date.now();\n    console.log(`Before: ${request.method} ${request.url}`);\n\n    const result = await next.handle();  // executa o handler\n\n    console.log(`After: ${Date.now() - now}ms`);\n    return result;\n  }\n}\n```\n\nA cadeia de interceptors \u00e9 constru\u00edda com `reduceRight`, ent\u00e3o o primeiro interceptor declarado \u00e9 o mais externo.\n\n---\n\n## 9. Lifecycle Hooks\n\n**Arquivo:** `packages/reflected/src/lifecycle.ts`\n\nDuas interfaces opcionais que qualquer controller ou service pode implementar:\n\n```typescript\ninterface OnApplicationBootstrap {\n  onApplicationBootstrap(): Promise<void> | void\n}\n\ninterface OnApplicationShutdown {\n  onApplicationShutdown(signal?: string): Promise<void> | void\n}\n```\n\n- `onApplicationBootstrap` \u2192 chamado pelo `controllerPlugin` ap\u00f3s registrar todas as rotas\n- `onApplicationShutdown` \u2192 chamado via `fastify.addHook(\"onClose\", ...)` quando o servidor fecha\n\n**Exemplo:**\n```typescript\n@Injectable()\n@Controller(\"/cache\")\nexport class CacheController implements OnApplicationBootstrap, OnApplicationShutdown {\n  async onApplicationBootstrap() {\n    await this.cacheService.connect();\n  }\n  async onApplicationShutdown(signal?: string) {\n    await this.cacheService.disconnect();\n  }\n}\n```\n\n---\n\n## 10. Auto-Discovery de Controllers\n\n**Arquivo:** `packages/reflected/src/discovery.ts`\n\n```typescript\nasync function discoverControllers(options: DiscoverOptions): Promise<void>\n\ninterface DiscoverOptions {\n  patterns?: string[];   // padr\u00e3o: [\"**/*.controller.ts\", \"**/*.controller.js\"]\n  cwd: string;           // diret\u00f3rio base para busca (obrigat\u00f3rio)\n  ignore?: string[];     // padr\u00e3o: [\"**/node_modules/**\", \"**/__tests__/**\", \"**/dist/**\"]\n}\n```\n\nUsa `fast-glob` para encontrar arquivos de controller e os importa dinamicamente. Ao importar, os decorators `@Controller` s\u00e3o executados e as classes s\u00e3o registradas no `registry`.\n\n**Exemplo:**\n```typescript\nimport path from \"path\";\nimport { discoverControllers } from \"gtf-reflected-router\";\n\nawait discoverControllers({\n  cwd: path.join(__dirname, \"modules\"),\n  // patterns: [\"**/*.controller.ts\"]  \u2190 padr\u00e3o autom\u00e1tico\n});\n```\n\n```typescript\nfunction getRegisteredControllers(): Constructor[]\n```\n\nRetorna todas as classes registradas pelo `registry`.\n\n---\n\n## 11. Registry\n\n**Arquivo:** `packages/reflected/src/registry.ts`\n\nO `registry` \u00e9 um singleton de `ControllerRegistry` \u2014 um `Set<Constructor>` que mant\u00e9m todos os controllers registrados via `@Controller`.\n\n```typescript\nregistry.register(target: Constructor): void\nregistry.getAll(): Constructor[]\nregistry.clear(): void\n```\n\n`getRegisteredControllers()` em `discovery.ts` \u00e9 um wrapper de `registry.getAll()`.\n\n---\n\n## 12. Cron Jobs\n\n**Arquivo:** `packages/reflected/src/cron.ts`\n\n### `CRON_PATTERNS`\n\nConstantes pr\u00e9-definidas para express\u00f5es cron comuns:\n\n```typescript\nconst CRON_PATTERNS = {\n  EVERY_MINUTE:         \"* * * * *\",\n  EVERY_5_MINUTES:      \"*/5 * * * *\",\n  EVERY_15_MINUTES:     \"*/15 * * * *\",\n  EVERY_30_MINUTES:     \"*/30 * * * *\",\n  EVERY_HOUR:           \"0 * * * *\",\n  EVERY_2_HOURS:        \"0 */2 * * *\",\n  EVERY_6_HOURS:        \"0 */6 * * *\",\n  EVERY_12_HOURS:       \"0 */12 * * *\",\n  DAILY_MIDNIGHT:       \"0 0 * * *\",\n  DAILY_NOON:           \"0 12 * * *\",\n  WEEKLY_SUNDAY:        \"0 0 * * 0\",\n  WEEKLY_MONDAY:        \"0 0 * * 1\",\n  MONTHLY_FIRST_DAY:    \"0 0 1 * *\",\n  YEARLY_JANUARY_FIRST: \"0 0 1 1 *\",\n}\n```\n\n### Fun\u00e7\u00f5es Utilit\u00e1rias\n\n```typescript\ngetCronJobs(target: object): CronJobMetadata[]\n// Retorna todos os jobs registrados na classe\n\ngetCronJob(target: object, jobName: string): CronJobMetadata | undefined\n// Retorna um job espec\u00edfico pelo nome\n\nhasCronJobs(target: object): boolean\n// Verifica se a classe tem jobs registrados\n\ngetActiveCronJobs(target: object): CronJobMetadata[]\n// Retorna apenas jobs com options.enabled !== false\n\nvalidateCronExpression(expression: string): void\n// Valida express\u00e3o cron (lan\u00e7a Error se inv\u00e1lida)\n// Suporta: *, ?, ranges (1-5), steps (*/5), listas (1,2,3), 5 ou 6 partes\n\nvalidateCronJobOptions(options?: CronJobOptions): void\n// Valida op\u00e7\u00f5es: maxConcurrency >= 1, timeout >= 1, priority 1-10, retryAttempts >= 0, retryDelay >= 0\n```\n\n### `executeCronJobSafely`\n\n```typescript\nasync function executeCronJobSafely(\n  jobMetadata: CronJobMetadata,\n  instance: Record<string, unknown>,\n  execution: CronJobExecution\n): Promise<unknown>\n```\n\nExecuta um cron job com:\n- Suporte a timeout via `Promise.race`\n- Retry autom\u00e1tico (`retryAttempts` tentativas com `retryDelay` ms entre elas)\n- Callbacks `onStart`, `onComplete`, `onError`\n- Preenchimento do objeto `CronJobExecution` com status, timestamps e erros\n\n**`CronJobExecution`:**\n```typescript\ninterface CronJobExecution {\n  jobName: string;\n  startTime: Date;\n  endTime?: Date;\n  status: \"running\" | \"completed\" | \"failed\" | \"timeout\";\n  error?: Error;\n  result?: unknown;\n  attempt: number;\n}\n```\n\n---\n\n## 13. Controller Plugin (Fastify)\n\n**Arquivo:** `apps/server/src/core/plugins/controller-plugin.ts`\n\nO `controllerPlugin` \u00e9 o plugin Fastify que conecta todos os decorators ao framework. \u00c9 o \"motor\" de execu\u00e7\u00e3o.\n\n```typescript\nconst controllerPlugin = fastifyPlugin(\n  async (fastify: FastifyInstance, options: ControllerOptions) => { ... },\n  { name: \"controller-plugin\" }\n)\n\ninterface ControllerOptions {\n  controllers?: any[];  // Se n\u00e3o fornecido, usa getRegisteredControllers()\n  prefix?: string;      // Prefixo global (ex: \"/api\")\n}\n```\n\n**Pipeline de execu\u00e7\u00e3o por rota:**\n\n```\n1. Montar URL final: options.prefix + @Controller prefix + @Route path\n2. Registrar fastify.route({ method, url, handler })\n3. Em cada requisi\u00e7\u00e3o:\n   a. Criar ExecutionContext (request, reply, ControllerClass, handlerName)\n   b. Executar Guards (classe + m\u00e9todo) \u2192 403 se falhar\n   c. Resolver par\u00e2metros (built-in + custom) com valida\u00e7\u00e3o Zod se schema presente\n   d. Executar Interceptors em cadeia (reduceRight)\n   e. Invocar handler com args resolvidos\n   f. Aplicar @HttpCode se definido\n4. Ap\u00f3s registrar rotas: chamar onApplicationBootstrap em todos os controllers\n5. Em fastify.onClose: chamar onApplicationShutdown em todos os controllers\n```\n\n**Registro:**\n```typescript\nawait app.register(controllerPlugin, { prefix: \"/api\" });\n```\n\n---\n\n## 14. Tipos e Interfaces\n\n**Arquivo:** `packages/reflected/src/types.ts`\n\n```typescript\n// M\u00e9todos HTTP suportados\nconst HTTP_METHODS = {\n  GET: \"GET\", POST: \"POST\", PUT: \"PUT\",\n  DELETE: \"DELETE\", PATCH: \"PATCH\", HEAD: \"HEAD\", OPTIONS: \"OPTIONS\"\n}\ntype HttpMethod = \"GET\" | \"POST\" | \"PUT\" | \"DELETE\" | \"PATCH\" | \"HEAD\" | \"OPTIONS\"\n\n// Metadados de uma rota\ninterface RouteMetadata {\n  method: HttpMethod;\n  path: string;\n  handler: string;     // nome do m\u00e9todo no controller\n  options?: Omit<RouteOptions, \"method\" | \"url\" | \"handler\">;\n}\n\n// Tipos de par\u00e2metro built-in\nenum ParamType {\n  BODY = \"body\",\n  QUERY = \"query\",\n  PARAM = \"param\",\n  HEADERS = \"headers\",\n  REQUEST = \"request\",\n  REPLY = \"reply\",\n}\n\n// Interface m\u00ednima compat\u00edvel com Zod\ninterface ZodLike {\n  safeParse(data: unknown):\n    | { success: true; data: unknown }\n    | { success: false; error: { flatten(): unknown } }\n}\n\n// Metadados de par\u00e2metro built-in\ninterface ParamMetadata {\n  index: number;       // \u00edndice do par\u00e2metro na assinatura do m\u00e9todo\n  type: ParamType;\n  key?: string;        // chave espec\u00edfica (ex: \"id\" em @Param(\"id\"))\n  schema?: ZodLike;    // schema de valida\u00e7\u00e3o\n}\n\n// Contexto de execu\u00e7\u00e3o acess\u00edvel em guards e interceptors\ninterface ExecutionContext {\n  switchToHttp(): HttpArgumentsHost;\n  getHandler(): Function;   // o m\u00e9todo handler\n  getClass(): Function;     // a classe controller\n}\n\ninterface HttpArgumentsHost {\n  getRequest<T = any>(): T;\n  getReply<T = any>(): T;\n}\n\n// F\u00e1brica de decorator customizado\ntype CustomParamFactory<TData, TResult> = (\n  data: TData,\n  ctx: ExecutionContext\n) => TResult | Promise<TResult>\n\ninterface CustomParamMetadata<TData = any, TResult = any> {\n  index: number;\n  factory: CustomParamFactory<TData, TResult>;\n  data?: TData;\n}\n```\n\n---\n\n## 15. Chaves de Metadados\n\n**Arquivo:** `packages/reflected/src/metadata-keys.ts`\n\nTodos os metadados usam `Symbol.for()` para garantir unicidade global:\n\n| Constante | Symbol | Usado por |\n|-----------|--------|-----------|\n| `ROUTES_METADATA_KEY` | `\"gtf:routes:metadata\"` | `@Route` e variants |\n| `REQUEST_PARAM_METADATA_KEY` | `\"gtf:request-param:metadata\"` | `@Request()` (deprecated) |\n| `RESPONSE_PARAM_METADATA_KEY` | `\"gtf:response-param:metadata\"` | `@Response()` (deprecated) |\n| `CONTROLLER_PREFIX_METADATA_KEY` | `\"gtf:controller-prefix:metadata\"` | `@Controller` |\n| `CRON_JOBS_METADATA_KEY` | `\"gtf:cron-jobs:metadata\"` | `@CronJob` |\n| `PARAM_METADATA_KEY` | `\"gtf:param:metadata\"` | `@Body`, `@Query`, `@Param`, etc. |\n| `CUSTOM_PARAM_METADATA_KEY` | `\"gtf:custom-param:metadata\"` | `createParamDecorator` |\n| `INJECTABLE_METADATA_KEY` | `\"gtf:injectable:metadata\"` | `@Injectable` |\n| `GUARDS_METADATA_KEY` | `\"gtf:guards:metadata\"` | `@UseGuards` |\n| `INTERCEPTORS_METADATA_KEY` | `\"gtf:interceptors:metadata\"` | `@UseInterceptors` |\n| `HTTP_CODE_METADATA_KEY` | `\"gtf:http-code:metadata\"` | `@HttpCode` |\n\n---\n\n## 16. Exemplo Completo (app/server)\n\n### Bootstrap (`apps/server/src/index.ts`)\n\n```typescript\nimport \"reflect-metadata\";\nimport fastify from \"fastify\";\nimport { discoverControllers } from \"gtf-reflected-router\";\nimport { controllerPlugin } from \"./core/plugins/controller-plugin\";\nimport path from \"path\";\n\nconst app = fastify({ /* logger, etc. */ });\n\n// Registrar plugins Fastify (cors, compress, swagger)\nawait registerPlugins(app);\n\n// 1. Auto-descobrir todos os *.controller.ts em /modules\nawait discoverControllers({ cwd: path.join(__dirname, \"modules\") });\n\n// 2. Registrar o plugin que monta todas as rotas com prefixo /api\nawait app.register(controllerPlugin, { prefix: \"/api\" });\n\nawait app.listen({ port: 8080, host: \"0.0.0.0\" });\n```\n\n### Controller com DI, Guard e Interceptor\n\n```typescript\nimport { Controller, Get, Post, Delete, Param, Body, UseGuards, UseInterceptors, Injectable } from \"gtf-reflected-router\";\nimport { z } from \"zod\";\n\nconst CreateUserSchema = z.object({\n  username: z.string().min(3),\n  level: z.number().int().min(1),\n  tag: z.string().startsWith(\"#\"),\n});\n\n@Injectable()\n@Controller(\"/users\")\n@UseInterceptors(LoggingInterceptor)    // intercepta todas as rotas\nexport class UserController {\n  constructor(private readonly usersService: UsersService) {}\n\n  @Get(\"/\")\n  async getUsers() {\n    return this.usersService.findAll();\n  }\n\n  @Get(\"/:id\")\n  async getUserById(@Param(\"id\") id: string) {\n    return this.usersService.findById(Number(id));\n  }\n\n  @Post(\"/\")\n  async createUser(@Body(CreateUserSchema) userData: z.infer<typeof CreateUserSchema>) {\n    return this.usersService.create(userData);\n  }\n\n  @Delete(\"/:id\")\n  @UseGuards(AuthGuard)                 // guard apenas nesta rota\n  async deleteUser(@Param(\"id\") id: string) {\n    return this.usersService.remove(Number(id));\n  }\n}\n```\n\n### Guard de Autentica\u00e7\u00e3o\n\n```typescript\nimport { Injectable, Container } from \"gtf-reflected-router\";\nimport type { CanActivate, ExecutionContext } from \"gtf-reflected-router\";\n\n@Injectable()\nexport class AuthGuard implements CanActivate {\n  async canActivate(context: ExecutionContext): Promise<boolean> {\n    const request = context.switchToHttp().getRequest();\n    const token = request.headers.authorization?.split(\" \")[1];\n    if (!token) return false;\n    return Container.get(AuthService).validateToken(token);\n  }\n}\n```\n\n### Interceptor de Logging\n\n```typescript\nimport { Injectable } from \"gtf-reflected-router\";\nimport type { Interceptor, CallHandler, ExecutionContext } from \"gtf-reflected-router\";\n\n@Injectable()\nexport class LoggingInterceptor implements Interceptor {\n  async intercept(context: ExecutionContext, next: CallHandler): Promise<unknown> {\n    const req = context.switchToHttp().getRequest();\n    const start = Date.now();\n    console.log(`\u2192 ${req.method} ${req.url}`);\n    const result = await next.handle();\n    console.log(`\u2190 ${Date.now() - start}ms`);\n    return result;\n  }\n}\n```\n\n### Cron Job com Lifecycle Hooks\n\n```typescript\nimport { Injectable, CronJob, CRON_PATTERNS, getCronJobs, executeCronJobSafely } from \"gtf-reflected-router\";\nimport type { OnApplicationBootstrap, OnApplicationShutdown } from \"gtf-reflected-router\";\n\n@Injectable()\nexport class Cron implements OnApplicationBootstrap, OnApplicationShutdown {\n  private jobs: ReturnType<typeof setInterval>[] = [];\n\n  @CronJob(CRON_PATTERNS.DAILY_MIDNIGHT, {\n    description: \"Backup di\u00e1rio \u00e0 meia-noite\",\n    timezone: \"America/Sao_Paulo\",\n    timeout: 10000,\n    priority: 1,\n  })\n  async dailyBackup(): Promise<void> {\n    console.log(\"Iniciando backup...\");\n  }\n\n  async onApplicationBootstrap(): Promise<void> {\n    const jobs = getCronJobs(Cron);\n    for (const job of jobs) {\n      await executeCronJobSafely(job, this, {\n        jobName: job.name,\n        startTime: new Date(),\n        status: \"running\",\n        attempt: 1,\n      });\n    }\n  }\n\n  onApplicationShutdown(signal?: string): void {\n    for (const interval of this.jobs) clearInterval(interval);\n    this.jobs = [];\n  }\n}\n```\n\n---\n\n## 17. Fluxo de Execu\u00e7\u00e3o de uma Requisi\u00e7\u00e3o\n\n```\nHTTP Request\n    \u2502\n    \u25bc\nFastify router (URL matching)\n    \u2502\n    \u25bc\ncontrollerPlugin handler\n    \u2502\n    \u251c\u2500\u25ba [1] createExecutionContext(request, reply, ControllerClass, handlerName)\n    \u2502\n    \u251c\u2500\u25ba [2] getGuards(Controller, handlerName)\n    \u2502       \u251c\u2500 Guards de classe\n    \u2502       \u2514\u2500 Guards de m\u00e9todo\n    \u2502       Para cada guard:\n    \u2502         resolveGuardInstance \u2192 Container.get(GuardClass) ou inst\u00e2ncia direta\n    \u2502         guard.canActivate(ctx)\n    \u2502         Se false \u2192 reply.status(403).send({ error: \"Forbidden\" }) e retorna\n    \u2502\n    \u251c\u2500\u25ba [3] Resolver par\u00e2metros (se h\u00e1 decorators @Body, @Query, @Param, etc.)\n    \u2502       getParamMetadata(Controller, handler) \u2192 ParamMetadata[]\n    \u2502       getCustomParamMetadata(Controller, handler) \u2192 CustomParamMetadata[]\n    \u2502       Para cada ParamMetadata:\n    \u2502         extrair valor de request (body/query/params/headers/request/reply)\n    \u2502         se tem schema Zod \u2192 safeParse \u2192 400 se inv\u00e1lido\n    \u2502       Para cada CustomParamMetadata:\n    \u2502         factory(data, ctx) \u2192 valor\n    \u2502\n    \u251c\u2500\u25ba [4] getInterceptors(Controller, handlerName)\n    \u2502       Construir cadeia via reduceRight\n    \u2502       interceptor1.intercept(ctx, { handle: \u2192 interceptor2.intercept(ctx, { handle: \u2192 ... invokeHandler }) })\n    \u2502\n    \u251c\u2500\u25ba [5] invokeHandler()\n    \u2502       controllerInstance[handlerName].call(instance, ...args)\n    \u2502\n    \u251c\u2500\u25ba [6] getHttpCode(Controller, handlerName)\n    \u2502       Se definido \u2192 reply.status(httpCode)\n    \u2502\n    \u2514\u2500\u25ba [7] return result\n```\n\n---\n\n## 18. Padr\u00f5es e Dicas\n\n### Estrutura de M\u00f3dulo Recomendada\n\n```\nmodules/\n\u2514\u2500\u2500 users/\n    \u251c\u2500\u2500 users.controller.ts    # @Controller, rotas HTTP\n    \u251c\u2500\u2500 users.service.ts       # @Injectable, l\u00f3gica de neg\u00f3cio\n    \u2514\u2500\u2500 __tests__/\n        \u2514\u2500\u2500 user.controller.test.ts\n```\n\n### Valida\u00e7\u00e3o com Zod\n\nPasse o schema diretamente ao decorator de par\u00e2metro. A valida\u00e7\u00e3o acontece automaticamente no pipeline, retornando 400 com detalhes se falhar:\n\n```typescript\nconst Schema = z.object({ name: z.string().min(1) });\n\n@Post(\"/\")\nasync create(@Body(Schema) data: z.infer<typeof Schema>) {\n  // data j\u00e1 foi validado \u2014 tipos garantidos\n}\n```\n\n### Guards vs Interceptors\n\n| | Guard | Interceptor |\n|---|---|---|\n| **Quando executa** | Antes do handler | Antes E depois |\n| **Pode bloquear** | Sim (retorna false \u2192 403) | N\u00e3o diretamente |\n| **Acessa resultado** | N\u00e3o | Sim |\n| **Caso de uso** | Autentica\u00e7\u00e3o, autoriza\u00e7\u00e3o | Logging, cache, transforma\u00e7\u00e3o |\n\n### Inje\u00e7\u00e3o de Depend\u00eancia \u2014 Regras\n\n- Tipos primitivos (`number`, `string`, `boolean`) **n\u00e3o** podem ser injetados via construtor \u2014 use `@Inject(Token)` ou reestruture\n- Interfaces TypeScript n\u00e3o existem em runtime \u2014 use classes concretas como tokens DI\n- `@Controller` registra automaticamente no container; n\u00e3o precisa de `@Injectable` adicional\n- `Container.get()` pode ser chamado manualmente em qualquer lugar (ex: dentro de guards)\n\n### Auto-Discovery \u2014 Conven\u00e7\u00f5es\n\n- Arquivos de controller **devem** ter o sufixo `.controller.ts` para serem descobertos automaticamente\n- O `cwd` passado a `discoverControllers` deve apontar para a raiz dos m\u00f3dulos\n- Discovery importa os arquivos din\u00e2micamente \u2014 os decorators s\u00e3o executados no import\n\n### URL Final das Rotas\n\n```\n[options.prefix] + [@Controller prefix] + [@Route path]\n    \"/api\"       +      \"/users\"        +     \"/:id\"\n                 =     \"/api/users/:id\"\n```\n\n### Swagger / OpenAPI\n\nO campo `options` de cada decorator de rota aceita `schema` do Fastify, compat\u00edvel com `@fastify/swagger`:\n\n```typescript\n@Get(\"/\", {\n  schema: {\n    tags: [\"users\"],\n    summary: \"Lista usu\u00e1rios\",\n    querystring: { type: \"object\", properties: { limit: { type: \"number\" } } },\n    response: { 200: { type: \"array\", items: { $ref: \"#/components/schemas/User\" } } }\n  }\n})\n```\n\n### Testes\n\nPara testes unit\u00e1rios de controllers, use `Container.clear()` no `beforeEach` para resetar o estado de singletons:\n\n```typescript\nimport { Container } from \"gtf-reflected-router\";\nimport { registry } from \"gtf-reflected-router\";\n\nbeforeEach(() => {\n  Container.clear();\n  registry.clear();\n});\n```\n"
+    },
+    "tool_use_id": "toolu_01XCzYg9DLiYnD2jFKAKX4re"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "TaskUpdate",
+    "tool_input": {
+      "taskId": "4",
+      "status": "completed"
+    },
+    "tool_use_id": "toolu_01QBHCzSxfUybRAJ4PSD8zt9"
+  }
+]

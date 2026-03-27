@@ -17,9 +17,9 @@ export {
   getRequestParams,
   getResponseParams,
   getHttpCode,
-} from "./decorators.js";
+} from "./decorators";
 
-export type { HttpMethod, RouteMetadata } from "./decorators.js";
+export type { HttpMethod, RouteMetadata } from "./decorators";
 
 export {
   Body,
@@ -31,7 +31,7 @@ export {
   createParamDecorator,
   getParamMetadata,
   getCustomParamMetadata,
-} from "./params.js";
+} from "./params";
 
 export type {
   ParamMetadata,
@@ -39,20 +39,21 @@ export type {
   CustomParamFactory,
   ExecutionContext,
   HttpArgumentsHost,
-} from "./types.js";
+  ZodLike,
+} from "./types";
 
-export { ParamType } from "./types.js";
+export { ParamType } from "./types";
 
-export { Container, Injectable } from "./container.js";
-export { UseGuards, getGuards } from "./guards.js";
-export type { CanActivate } from "./guards.js";
-export { UseInterceptors, getInterceptors } from "./interceptors.js";
-export type { Interceptor, CallHandler } from "./interceptors.js";
-export type { OnApplicationBootstrap, OnApplicationShutdown } from "./lifecycle.js";
-export { registry } from "./registry.js";
-export { discoverControllers, getRegisteredControllers } from "./discovery.js";
-export type { DiscoverOptions } from "./discovery.js";
-export type { InjectableOptions, Scope } from "./container.js";
+export { Container, Injectable } from "./container";
+export { UseGuards, getGuards } from "./guards";
+export type { CanActivate } from "./guards";
+export { UseInterceptors, getInterceptors } from "./interceptors";
+export type { Interceptor, CallHandler } from "./interceptors";
+export type { OnApplicationBootstrap, OnApplicationShutdown } from "./lifecycle";
+export { registry } from "./registry";
+export { discoverControllers, getRegisteredControllers } from "./discovery";
+export type { DiscoverOptions } from "./discovery";
+export type { InjectableOptions, Scope } from "./container";
 
 export {
   CRON_PATTERNS,
@@ -64,6 +65,6 @@ export {
   executeCronJobSafely,
   validateCronExpression,
   validateCronJobOptions,
-} from "./cron.js";
+} from "./cron";
 
-export type { CronJobMetadata, CronJobOptions, CronJobExecution } from "./cron.js";
+export type { CronJobMetadata, CronJobOptions, CronJobExecution } from "./cron";

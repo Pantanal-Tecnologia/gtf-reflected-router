@@ -6,11 +6,11 @@ import {
   RESPONSE_PARAM_METADATA_KEY,
   ROUTES_METADATA_KEY,
   HTTP_CODE_METADATA_KEY,
-} from "./metadata-keys.js";
-import { HTTP_METHODS } from "./types.js";
-import type { HttpMethod, RouteMetadata } from "./types.js";
-import { Container } from "./container.js";
-import { registry } from "./registry.js";
+} from "./metadata-keys";
+import { HTTP_METHODS } from "./types";
+import type { HttpMethod, RouteMetadata } from "./types";
+import { Container } from "./container";
+import { registry } from "./registry";
 
 export type { HttpMethod, RouteMetadata };
 export { HTTP_METHODS };

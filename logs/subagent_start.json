@@ -1,0 +1,38 @@
+[
+  {
+    "session_id": "c0e9027f-45ea-41ab-a1d4-122eaaaf19a8",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/c0e9027f-45ea-41ab-a1d4-122eaaaf19a8.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "agent_id": "a72bd8ec8ce31ceff",
+    "agent_type": "Explore",
+    "hook_event_name": "SubagentStart",
+    "logged_at": "2026-03-27T09:41:14.497506"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "agent_id": "aa5fb64acb939d94d",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "SubagentStart",
+    "logged_at": "2026-03-27T09:55:12.023174"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "agent_id": "a983a39da27c31504",
+    "agent_type": "feature-dev:code-explorer",
+    "hook_event_name": "SubagentStart",
+    "logged_at": "2026-03-27T09:55:16.428701"
+  },
+  {
+    "session_id": "b9ead882-c2a5-4dc6-9454-bf5114b41a41",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b9ead882-c2a5-4dc6-9454-bf5114b41a41.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router",
+    "agent_id": "a04d7a6f0a1fd2707",
+    "agent_type": "Explore",
+    "hook_event_name": "SubagentStart",
+    "logged_at": "2026-03-27T09:55:21.222213"
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "session_id": "b77fdac9-acac-4cde-9aae-31ab91286572",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/b77fdac9-acac-4cde-9aae-31ab91286572.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router/packages/reflected",
+    "permission_mode": "acceptEdits",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "grep -n \"getHttpCode\\|ZodLike\\|OnApplicationBootstrap\\|Body\\|Query\\|Param\\|Injectable\\|UseGuards\" /Users/thiago/gtf-reflected-router/packages/reflected/dist/index.d.ts",
+      "description": "Verify new exports are in dist/index.d.ts"
+    },
+    "tool_use_id": "toolu_01S7gkXbSSWig3h2ATx9zxXF"
+  }
+]

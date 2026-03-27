@@ -1,6 +1,6 @@
 import "reflect-metadata";
-import { INTERCEPTORS_METADATA_KEY } from "./metadata-keys.js";
-import type { ExecutionContext } from "./types.js";
+import { INTERCEPTORS_METADATA_KEY } from "./metadata-keys";
+import type { ExecutionContext } from "./types";
 
 export interface CallHandler {
   handle(): Promise<unknown>;
@@ -15,7 +15,7 @@ type Constructor<T = any> = new (...args: any[]) => T;
 export function UseInterceptors(
   ...interceptors: (Constructor<Interceptor> | Interceptor)[]
 ): ClassDecorator & MethodDecorator {
-  return (target: any, propertyKey?: string | symbol, descriptor?: PropertyDescriptor) => {
+  const decorator = (target: any, propertyKey?: string | symbol) => {
     if (propertyKey !== undefined) {
       Reflect.defineMetadata(
         INTERCEPTORS_METADATA_KEY,
@@ -26,8 +26,8 @@ export function UseInterceptors(
     } else {
       Reflect.defineMetadata(INTERCEPTORS_METADATA_KEY, interceptors, target);
     }
-    return descriptor;
   };
+  return decorator as ClassDecorator & MethodDecorator;
 }
 
 export function getInterceptors(

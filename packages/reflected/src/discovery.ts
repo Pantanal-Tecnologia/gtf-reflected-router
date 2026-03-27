@@ -1,5 +1,5 @@
 import { glob } from "fast-glob";
-import { registry } from "./registry.js";
+import { registry } from "./registry";
 
 export interface DiscoverOptions {
   /** Glob patterns para encontrar controllers. Default: ['**\/*.controller.ts', '**\/*.controller.js'] */

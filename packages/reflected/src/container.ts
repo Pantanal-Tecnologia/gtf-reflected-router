@@ -1,5 +1,5 @@
 import "reflect-metadata";
-import { INJECTABLE_METADATA_KEY } from "./metadata-keys.js";
+import { INJECTABLE_METADATA_KEY } from "./metadata-keys";
 
 export type Scope = "singleton" | "transient";
 

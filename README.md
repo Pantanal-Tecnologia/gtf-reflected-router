@@ -1,7 +1,7 @@
 # gtf-reflected-router
 
 > Decorators TypeScript para definir e gerenciar rotas Fastify de forma
-> declarativa e type-safe.
+> declarativa, modular e type-safe, com suporte nativo a Injeção de Dependências e Validação.
 
 [![npm version](https://img.shields.io/npm/v/gtf-reflected-router.svg)](https://www.npmjs.com/package/gtf-reflected-router)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/)
@@ -10,293 +10,169 @@
 
 ---
 
+## 🚀 Novidades na Versão 1.0.x
+
+- **Injeção de Dependências (DI)**: Suporte nativo com `@Injectable()`.
+- **Guards e Interceptors**: Proteção de rotas e interceptação de chamadas.
+- **Validação com Zod**: Validação automática de parâmetros e corpo de requisição.
+- **Auto-Discovery**: Descoberta automática de controllers no sistema de arquivos.
+- **Hooks de Ciclo de Vida**: `OnApplicationBootstrap` e `OnApplicationShutdown`.
+
+---
+
 ## Instalação
 
 ```bash
-npm install gtf-reflected-router reflect-metadata
-# ou
-pnpm add gtf-reflected-router reflect-metadata
-# ou
-yarn add gtf-reflected-router reflect-metadata
+pnpm add gtf-reflected-router reflect-metadata zod
 ```
 
-> **Atenção:** adicione `import "reflect-metadata"` no ponto de entrada da sua
-> aplicação, antes de qualquer outro import.
+> **Atenção:** adicione `import "reflect-metadata"` no ponto de entrada da sua aplicação.
 
 ---
 
-## Configuração TypeScript
-
-No seu `tsconfig.json`:
-
-```json
-{
-  "compilerOptions": {
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
-  }
-}
-```
-
----
-
-## Início Rápido
+## Início Rápido (Moderno)
 
 ```typescript
 import "reflect-metadata";
-import {
-  Controller,
-  Get,
-  Post,
-  Request,
-  Response,
-  getRoutes,
-  getControllerPrefix,
+import { 
+  Controller, Get, Post, Body, Param, 
+  Injectable, UseGuards, UseInterceptors,
+  discoverControllers 
 } from "gtf-reflected-router";
-import type { FastifyRequest, FastifyReply } from "fastify";
-import fastify from "fastify";
+import { z } from "zod";
 
+// 1. Defina um Schema de Validação
+const CreateUserSchema = z.object({
+  username: z.string().min(3),
+  role: z.enum(["admin", "user"])
+});
+
+// 2. Crie um Serviço Injetável
+@Injectable()
+class UserService {
+  async create(data: any) { return { id: 1, ...data }; }
+}
+
+// 3. Crie um Controller
 @Controller("/users")
+@Injectable()
 class UserController {
-  @Get("/")
-  async getAll() {
-    return [{ id: 1, name: "Alice" }];
-  }
+  constructor(private readonly userService: UserService) {}
 
   @Get("/:id")
-  async getById(@Request() req: FastifyRequest<{ Params: { id: string } }>) {
-    return { id: req.params.id };
+  async getById(@Param("id") id: string) {
+    return { id };
   }
 
   @Post("/")
-  async create(
-    @Request() req: FastifyRequest<{ Body: { name: string } }>,
-    @Response() reply: FastifyReply,
-  ) {
-    reply.code(201).send({ id: 2, ...req.body });
+  async create(@Body(CreateUserSchema) body: z.infer<typeof CreateUserSchema>) {
+    return this.userService.create(body);
   }
 }
 
-// Registrar rotas no Fastify
+// 4. Inicialize o Fastify
 const app = fastify();
-const instance = new UserController();
-const prefix = getControllerPrefix(UserController); // "/users"
-
-for (const route of getRoutes(UserController)) {
-  app.route({
-    method: route.method,
-    url: prefix + route.path, // ex: GET /users/:id
-    handler: instance[route.handler].bind(instance),
-    ...route.options,
-  });
-}
-
-await app.listen({ port: 3000 });
+// ... registre o plugin customizado (veja seção Plugin)
 ```
 
 ---
 
-## Sub-paths
+## 🏗️ Arquitetura e DI
 
-O pacote exporta sub-paths para tree-shaking:
-
-| Import                            | Conteúdo                         |
-| --------------------------------- | -------------------------------- |
-| `gtf-reflected-router`            | Tudo (decorators + cron)         |
-| `gtf-reflected-router/decorators` | Somente decorators de rota       |
-| `gtf-reflected-router/cron`       | Somente `@CronJob` e utilitários |
-
----
-
-## API — Decorators de Rota
-
-### `@Controller(prefix?)`
-
-Decorator de **classe** que define o prefixo base de todas as rotas do
-controller.
+O framework utiliza um `Container` interno para gerenciar a vida útil dos seus componentes.
 
 ```typescript
-@Controller("/products")
-class ProductController {
-  @Get("/") getAll() {} // → GET /products/
-  @Get("/:id") getById() {} // → GET /products/:id
-  @Post("/") create() {} // → POST /products/
-  @Delete("/:id") remove() {} // → DELETE /products/:id
-}
-```
+import { Injectable, Container } from "gtf-reflected-router";
 
-### `@Route(method, path, options?)`
+@Injectable({ scope: "singleton" }) // Default
+class DatabaseService { ... }
 
-Decorator base genérico. Todos os shorthands abaixo são açúcar sintático sobre
-ele.
-
-### Shorthands HTTP
-
-| Decorator                  | Método  |
-| -------------------------- | ------- |
-| `@Get(path, options?)`     | GET     |
-| `@Post(path, options?)`    | POST    |
-| `@Put(path, options?)`     | PUT     |
-| `@Delete(path, options?)`  | DELETE  |
-| `@Patch(path, options?)`   | PATCH   |
-| `@Head(path, options?)`    | HEAD    |
-| `@Options(path, options?)` | OPTIONS |
-
-O parâmetro `options` aceita qualquer opção do Fastify (exceto `method`, `url` e
-`handler`), como `schema`, `preHandler`, `config`, etc.
-
-```typescript
-@Get("/products", {
-  schema: {
-    tags: ["products"],
-    response: {
-      200: {
-        type: "array",
-        items: { type: "object", properties: { id: { type: "number" } } },
-      },
-    },
-  },
-})
-async listProducts() { ... }
-```
-
-### `@Request()` e `@Response()`
-
-Injetam `FastifyRequest` e `FastifyReply` como parâmetros do handler.
-
-```typescript
-@Post("/orders")
-async createOrder(
-  @Request()  req:   FastifyRequest<{ Body: OrderBody }>,
-  @Response() reply: FastifyReply,
-) {
-  const order = await this.service.create(req.body);
-  reply.code(201).send(order);
-}
+// Recuperando instâncias manualmente se necessário
+const db = Container.get(DatabaseService);
 ```
 
 ---
 
-## API — Cron Jobs
+## 🛡️ Guards e Interceptors
 
-Importe de `gtf-reflected-router/cron`:
-
-### `@CronJob(expression, options?)`
+### Guards (`CanActivate`)
+Ideais para autenticação e permissões.
 
 ```typescript
-import { CronJob, CRON_PATTERNS } from "gtf-reflected-router/cron";
+@Injectable()
+class AuthGuard implements CanActivate {
+  async canActivate(context: ExecutionContext): Promise<boolean> {
+    const request = context.switchToHttp().getRequest();
+    return !!request.headers.authorization;
+  }
+}
 
-class TaskScheduler {
-  @CronJob(CRON_PATTERNS.DAILY_MIDNIGHT, {
-    timezone: "America/Sao_Paulo",
-    description: "Limpeza diária de dados temporários",
-    timeout: 30_000,
-    retryAttempts: 3,
-    retryDelay: 5_000,
-    onError: (name, err) => console.error(`[${name}]`, err),
-  })
-  async dailyCleanup(): Promise<void> {
-    // ...
+@Controller("/admin")
+@UseGuards(AuthGuard) // Protege todas as rotas da classe
+class AdminController { ... }
+```
+
+### Interceptors (`Interceptor`)
+Para logging, transformação de resposta ou métricas.
+
+```typescript
+@Injectable()
+class LoggingInterceptor implements Interceptor {
+  async intercept(context: ExecutionContext, next: CallHandler) {
+    console.log("Antes...");
+    const result = await next.handle();
+    console.log("Depois...");
+    return result;
   }
 }
 ```
 
-### `CRON_PATTERNS`
+---
 
-Constantes de expressões cron pré-definidas:
+## 🔍 Auto-Discovery
 
-| Constante           | Expressão     | Descrição       |
-| ------------------- | ------------- | --------------- |
-| `EVERY_MINUTE`      | `* * * * *`   | Todo minuto     |
-| `EVERY_5_MINUTES`   | `*/5 * * * *` | A cada 5 min    |
-| `EVERY_HOUR`        | `0 * * * *`   | A cada hora     |
-| `DAILY_MIDNIGHT`    | `0 0 * * *`   | Meia-noite      |
-| `DAILY_NOON`        | `0 12 * * *`  | Ao meio-dia     |
-| `WEEKLY_MONDAY`     | `0 0 * * 1`   | Segunda-feira   |
-| `MONTHLY_FIRST_DAY` | `0 0 1 * *`   | Primeiro do mês |
-
-Ver arquivo `src/cron.ts` para a lista completa.
-
-### Opções do `@CronJob`
-
-| Opção            | Tipo      | Default | Descrição                          |
-| ---------------- | --------- | ------- | ---------------------------------- |
-| `timezone`       | `string`  | —       | Ex: `"America/Sao_Paulo"`          |
-| `enabled`        | `boolean` | `true`  | Ativa/desativa o job               |
-| `runOnInit`      | `boolean` | `false` | Executa imediatamente ao registrar |
-| `maxConcurrency` | `number`  | `1`     | Máximo de execuções simultâneas    |
-| `timeout`        | `number`  | —       | Timeout em ms                      |
-| `retryAttempts`  | `number`  | `0`     | Tentativas de retry                |
-| `retryDelay`     | `number`  | `1000`  | Delay entre retries (ms)           |
-| `priority`       | `number`  | `5`     | 1 (alta) a 10 (baixa)              |
-| `onStart`        | `fn`      | —       | Callback ao iniciar                |
-| `onComplete`     | `fn`      | —       | Callback ao concluir               |
-| `onError`        | `fn`      | —       | Callback ao falhar                 |
-
-### Funções Utilitárias — Cron
+Não registre manualmente cada controller. Deixe o framework encontrá-los.
 
 ```typescript
-import {
-  getCronJobs, // Todos os jobs de uma classe
-  getCronJob, // Job específico pelo nome
-  hasCronJobs, // Verifica se a classe tem jobs
-  getActiveCronJobs, // Somente jobs com enabled !== false
-  executeCronJobSafely, // Executa com retry/timeout/callbacks
-  validateCronExpression, // Valida expressão (throws se inválida)
-} from "gtf-reflected-router/cron";
+import { discoverControllers } from "gtf-reflected-router";
+import path from "node:path";
+
+// Procura por todos os *.controller.ts recursivamente
+await discoverControllers({ 
+  cwd: path.join(__dirname, "modules") 
+});
 ```
 
 ---
 
-## API — Funções Utilitárias (Rotas)
+## ⏱️ Cron Jobs
+
+Integre tarefas agendadas diretamente nas suas classes.
 
 ```typescript
-import {
-  getRoutes, // RouteMetadata[] registradas em um controller
-  getControllerPrefix, // Prefixo definido pelo @Controller
-  getRequestParams, // Índices dos parâmetros @Request
-  getResponseParams, // Índices dos parâmetros @Response
-} from "gtf-reflected-router/decorators";
-```
+import { CronJob, CRON_PATTERNS } from "gtf-reflected-router";
 
----
-
-## Integração com Fastify Plugin
-
-Para registrar múltiplos controllers automaticamente:
-
-```typescript
-import fastifyPlugin from "fastify-plugin";
-import {
-  getRoutes,
-  getControllerPrefix,
-} from "gtf-reflected-router/decorators";
-
-export const controllerPlugin = fastifyPlugin(async (fastify, options) => {
-  for (const Controller of options.controllers) {
-    const instance = new Controller();
-    const prefix = options.prefix + getControllerPrefix(Controller);
-
-    for (const route of getRoutes(Controller)) {
-      fastify.route({
-        method: route.method,
-        url: prefix + route.path,
-        handler: instance[route.handler].bind(instance),
-        ...route.options,
-      });
-    }
+@Injectable()
+class BackupTask {
+  @CronJob(CRON_PATTERNS.DAILY_MIDNIGHT)
+  async runBackup() {
+    // Executado todo dia à meia-noite
   }
-});
-
-// Uso:
-app.register(controllerPlugin, {
-  controllers: [UserController, ProductController],
-  prefix: "/api/v1",
-});
-// → GET /api/v1/users/
-// → GET /api/v1/users/:id
-// → GET /api/v1/products/
+}
 ```
+
+---
+
+## API — Decorators de Parâmetros
+
+| Decorator   | Descrição                                      | Suporte Zod |
+| ----------- | ---------------------------------------------- | ----------- |
+| `@Body()`   | Injeta o corpo da requisição (`request.body`)  | ✅ Sim      |
+| `@Param()`  | Injeta parâmetros da URL (`request.params`)    | ✅ Sim      |
+| `@Query()`  | Injeta query strings (`request.query`)         | ✅ Sim      |
+| `@Headers()`| Injeta headers HTTP (`request.headers`)        | ✅ Sim      |
+| `@Req()`    | Injeta a instância original do `FastifyRequest`| ❌ Não      |
+| `@Res()`    | Injeta a instância original do `FastifyReply`  | ❌ Não      |
 
 ---
 
@@ -308,46 +184,22 @@ app.register(controllerPlugin, {
 | TypeScript       | 5.x           |
 | reflect-metadata | 0.2+          |
 | Fastify          | 5.x           |
-
----
-
-## Testes
-
-```bash
-# Rodar todos os testes
-pnpm test
-
-# Watch mode
-pnpm test:watch
-
-# Com cobertura
-pnpm test:coverage
-```
-
-A suite cobre: decorators de rota, `@Controller`, parâmetros
-`@Request`/`@Response`, validação de expressão cron, `@CronJob`, executor com
-retry/timeout e funções utilitárias.
+| Zod (opcional)   | 3.x           |
 
 ---
 
 ## Contribuindo
 
+Para rodar o ambiente de desenvolvimento:
+
 ```bash
-# Clonar e instalar
 git clone https://github.com/Pantanal-Tecnologia/gtf-reflected-router
-cd gtf-reflected-router
 pnpm install
-
-# Build da lib
-cd packages/reflected
-pnpm build
-
-# Rodar testes
-pnpm test
-
-# Lint
-pnpm lint
-
-# Formatar
-pnpm -w format
+pnpm dev # Inicia a aplicação de exemplo (apps/server)
 ```
+
+---
+
+## Licença
+
+MIT © [Pantanal Tecnologia](https://github.com/Pantanal-Tecnologia)

@@ -1,7 +1,7 @@
 {
   "name": "gtf-reflected-router",
   "author": "Pantanal-Tecnologia",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "TypeScript decorators for defining and managing Fastify routes in a clean, declarative way",
   "license": "MIT",
   "repository": "https://github.com/Pantanal-Tecnologia/gtf-reflected-router",
@@ -27,7 +27,7 @@
     "README.md"
   ],
   "scripts": {
-    "build": "swc src -d dist --strip-leading-paths",
+    "build": "swc src -d dist --strip-leading-paths && tsc --emitDeclarationOnly",
     "build:watch": "swc src -d dist --strip-leading-paths --watch",
     "clean": "rm -rf dist",
     "test": "jest",
@@ -56,7 +56,9 @@
     "zod": ">=3.0.0"
   },
   "peerDependenciesMeta": {
-    "zod": { "optional": true }
+    "zod": {
+      "optional": true
+    }
   },
   "keywords": [
     "fastify",

@@ -1,14 +1,6 @@
-import {
-  CronJob,
-  CRON_PATTERNS,
-  getCronJobs,
-  executeCronJobSafely,
-} from "../../../../packages/reflected/src/index.js";
-import { Injectable } from "../../../../packages/reflected/src/container.js";
-import type {
-  OnApplicationBootstrap,
-  OnApplicationShutdown,
-} from "../../../../packages/reflected/src/lifecycle.js";
+import { CronJob, CRON_PATTERNS, getCronJobs, executeCronJobSafely } from "gtf-reflected-router";
+import { Injectable } from "gtf-reflected-router";
+import type { OnApplicationBootstrap, OnApplicationShutdown } from "gtf-reflected-router";
 
 @Injectable()
 export class Cron implements OnApplicationBootstrap, OnApplicationShutdown {
@@ -30,7 +22,23 @@ export class Cron implements OnApplicationBootstrap, OnApplicationShutdown {
     console.log(`[Cron] Iniciando ${cronJobs.length} job(s)...`);
 
     for (const job of cronJobs) {
-      await executeCronJobSafely(this, job.name);
+      await executeCronJobSafely(
+        {
+          expression: job.expression,
+          name: job.name,
+          handler: job.handler,
+          options: job.options,
+        },
+        {
+          fixedDelay: 1000,
+        },
+        {
+          jobName: job.name,
+          startTime: new Date(),
+          status: "running",
+          attempt: 1,
+        },
+      );
     }
   }
 
