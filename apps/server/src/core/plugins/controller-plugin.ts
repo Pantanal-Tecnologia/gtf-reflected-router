@@ -1,9 +1,9 @@
 import fastifyPlugin from "fastify-plugin";
-import { FastifyInstance, FastifyRequest, FastifyReply } from "fastify";
-import { getRoutes, getControllerPrefix, getHttpCode } from "gtf-reflected-router";
+import type { FastifyInstance, FastifyRequest, FastifyReply } from "fastify";
+import { getRoutes, getControllerPrefix, getHttpCode, getApiResponse } from "gtf-reflected-router";
 import { getParamMetadata, getCustomParamMetadata } from "gtf-reflected-router";
 import { ParamType } from "gtf-reflected-router";
-import type { ExecutionContext } from "gtf-reflected-router";
+import type { ExecutionContext, ZodLike } from "gtf-reflected-router";
 import { Container } from "gtf-reflected-router";
 import { getRegisteredControllers } from "gtf-reflected-router";
 import { getGuards } from "gtf-reflected-router";
@@ -11,10 +11,160 @@ import type { CanActivate } from "gtf-reflected-router";
 import { getInterceptors } from "gtf-reflected-router";
 import type { Interceptor, CallHandler } from "gtf-reflected-router";
 import type { OnApplicationBootstrap, OnApplicationShutdown } from "gtf-reflected-router";
+import { z } from "zod";
 
 export interface ControllerOptions {
   controllers?: any[];
   prefix?: string;
+}
+
+function zodToJsonSchema(schema: ZodLike): Record<string, unknown> | null {
+  try {
+    const jsonSchema = z.toJSONSchema(schema as any) as Record<string, unknown>;
+    delete jsonSchema.$schema;
+    return jsonSchema;
+  } catch {
+    return null;
+  }
+}
+
+function isZodLikeSchema(value: unknown): value is ZodLike {
+  return typeof value === "object" && value !== null && "safeParse" in (value as object);
+}
+
+function normalizeManualResponseSchemas(
+  responseSchemas: Record<string, unknown> | undefined,
+): Record<string, unknown> | undefined {
+  if (!responseSchemas) return undefined;
+
+  const normalizedEntries = Object.entries(responseSchemas).map(([statusCode, responseSchema]) => {
+    if (isZodLikeSchema(responseSchema)) {
+      const jsonSchema = zodToJsonSchema(responseSchema);
+      return [statusCode, jsonSchema ?? responseSchema] as const;
+    }
+
+    if (
+      typeof responseSchema === "object" &&
+      responseSchema !== null &&
+      "schema" in (responseSchema as Record<string, unknown>)
+    ) {
+      const wrapped = responseSchema as Record<string, unknown>;
+      const wrappedSchema = wrapped.schema;
+      if (isZodLikeSchema(wrappedSchema)) {
+        const jsonSchema = zodToJsonSchema(wrappedSchema);
+        return [statusCode, { ...wrapped, schema: jsonSchema ?? wrappedSchema }] as const;
+      }
+    }
+
+    return [statusCode, responseSchema] as const;
+  });
+
+  return Object.fromEntries(normalizedEntries);
+}
+
+function normalizeManualSchema(manualSchema: Record<string, unknown>): Record<string, unknown> {
+  const normalized = { ...manualSchema };
+  const normalizedResponse = normalizeManualResponseSchemas(
+    manualSchema.response as Record<string, unknown> | undefined,
+  );
+
+  if (normalizedResponse) {
+    normalized.response = normalizedResponse;
+  }
+
+  return normalized;
+}
+
+function buildAutoSwaggerSchema(
+  Controller: any,
+  handlerName: string,
+): Record<string, unknown> | null {
+  const builtinParams = getParamMetadata(Controller, handlerName);
+  const autoSchema: Record<string, unknown> = {};
+
+  for (const p of builtinParams) {
+    if (!p.schema) continue;
+    const jsonSchema = zodToJsonSchema(p.schema);
+    if (!jsonSchema) continue;
+
+    switch (p.type) {
+      case ParamType.BODY:
+        autoSchema.body = jsonSchema;
+        break;
+      case ParamType.QUERY:
+        autoSchema.querystring = jsonSchema;
+        break;
+      case ParamType.PARAM:
+        autoSchema.params = jsonSchema;
+        break;
+      case ParamType.HEADERS:
+        autoSchema.headers = jsonSchema;
+        break;
+    }
+  }
+
+  return Object.keys(autoSchema).length > 0 ? autoSchema : null;
+}
+
+function getDefaultSuccessStatus(method: string, explicitHttpCode?: number): number {
+  if (explicitHttpCode !== undefined) {
+    return explicitHttpCode;
+  }
+
+  return method.toUpperCase() === "POST" ? 201 : 200;
+}
+
+function buildAutoSwaggerResponseSchema(
+  method: string,
+  explicitHttpCode?: number,
+  Controller?: any,
+  handlerName?: string,
+): Record<string, unknown> {
+  const successStatus = getDefaultSuccessStatus(method, explicitHttpCode);
+
+  if (Controller && handlerName) {
+    const apiResponse = getApiResponse(Controller, handlerName);
+    if (apiResponse) {
+      let jsonSchema = zodToJsonSchema(apiResponse.schema);
+      if (jsonSchema && apiResponse.isArray) {
+        jsonSchema = { type: "array", items: jsonSchema };
+      }
+      return {
+        response: {
+          [successStatus]: {
+            description: apiResponse.description ?? "Successful response",
+            ...(jsonSchema ?? { type: "object", additionalProperties: true }),
+          },
+        },
+      };
+    }
+  }
+
+  return {
+    response: {
+      [successStatus]: {
+        description: "Successful response",
+        type: "object",
+        additionalProperties: true,
+      },
+    },
+  };
+}
+
+function mergeSwaggerSchemas(
+  autoSchema: Record<string, unknown> | null,
+  manualSchema: Record<string, unknown>,
+): Record<string, unknown> {
+  const merged = autoSchema ? { ...autoSchema, ...manualSchema } : { ...manualSchema };
+
+  const autoResponse = (autoSchema?.response as Record<string, unknown> | undefined) ?? {};
+  const manualResponse = (manualSchema.response as Record<string, unknown> | undefined) ?? {};
+
+  if (Object.keys(autoResponse).length > 0 || Object.keys(manualResponse).length > 0) {
+    merged.response = { ...autoResponse, ...manualResponse };
+  }
+
+  return merged;
 }
 
 function createExecutionContext(
@@ -64,9 +214,24 @@ export const controllerPlugin = fastifyPlugin(
       routes.forEach((route) => {
         const fullPath = prefix + controllerPrefix + route.path;
 
+        const routeHttpCode = getHttpCode(Controller, route.handler);
+        const autoParamsSchema = buildAutoSwaggerSchema(Controller, route.handler) ?? {};
+        const autoResponseSchema = buildAutoSwaggerResponseSchema(
+          route.method,
+          routeHttpCode,
+          Controller,
+          route.handler,
+        );
+        const autoSchema = { ...autoParamsSchema, ...autoResponseSchema };
+        const manualSchema = normalizeManualSchema(
+          (route.options?.schema as Record<string, unknown>) ?? {},
+        );
+        const mergedSchema = mergeSwaggerSchemas(autoSchema, manualSchema);
+
         fastify.route({
           method: route.method,
           url: fullPath,
+          schema: Object.keys(mergedSchema).length > 0 ? mergedSchema : undefined,
           handler: async (request: FastifyRequest, reply: FastifyReply) => {
             const ctx = createExecutionContext(request, reply, Controller, route.handler);
 
@@ -173,14 +338,16 @@ export const controllerPlugin = fastifyPlugin(
             }
 
             // Phase 7: Apply @HttpCode
-            const httpCode = getHttpCode(Controller, route.handler);
-            if (httpCode !== undefined) {
-              void reply.status(httpCode);
+            if (routeHttpCode !== undefined) {
+              void reply.status(routeHttpCode);
             }
 
             return result;
           },
-          ...route.options,
+          ...(() => {
+            const { schema: _schema, ...rest } = route.options ?? {};
+            return rest;
+          })(),
         });
       });
     });

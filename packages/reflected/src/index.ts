@@ -12,14 +12,21 @@ export {
   Request,
   Response,
   HttpCode,
+  ApiResponse,
   getRoutes,
   getControllerPrefix,
   getRequestParams,
   getResponseParams,
   getHttpCode,
+  getApiResponse,
 } from "./decorators";
 
-export type { HttpMethod, RouteMetadata } from "./decorators";
+export type {
+  HttpMethod,
+  RouteMetadata,
+  ApiResponseMetadata,
+  ApiResponseOptions,
+} from "./decorators";
 
 export {
   Body,

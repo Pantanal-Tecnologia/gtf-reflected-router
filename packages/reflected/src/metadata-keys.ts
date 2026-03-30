@@ -9,3 +9,4 @@ export const INJECTABLE_METADATA_KEY = Symbol.for("gtf:injectable:metadata");
 export const GUARDS_METADATA_KEY = Symbol.for("gtf:guards:metadata");
 export const INTERCEPTORS_METADATA_KEY = Symbol.for("gtf:interceptors:metadata");
 export const HTTP_CODE_METADATA_KEY = Symbol.for("gtf:http-code:metadata");
+export const API_RESPONSE_METADATA_KEY = Symbol.for("gtf:api-response:metadata");

@@ -6,6 +6,7 @@ import {
   RESPONSE_PARAM_METADATA_KEY,
   ROUTES_METADATA_KEY,
   HTTP_CODE_METADATA_KEY,
+  API_RESPONSE_METADATA_KEY,
 } from "./metadata-keys";
 import { HTTP_METHODS } from "./types";
 import type { HttpMethod, RouteMetadata } from "./types";
@@ -186,4 +187,41 @@ export function HttpCode(statusCode: number): MethodDecorator {
 
 export function getHttpCode(target: object, propertyKey: string | symbol): number | undefined {
   return Reflect.getMetadata(HTTP_CODE_METADATA_KEY, target, propertyKey) as number | undefined;
+}
+
+export interface ApiResponseOptions {
+  statusCode?: number;
+  description?: string;
+  isArray?: boolean;
+}
+
+export interface ApiResponseMetadata {
+  schema: import("./types").ZodLike;
+  statusCode?: number;
+  description?: string;
+  isArray?: boolean;
+}
+
+export function ApiResponse(
+  schema: import("./types").ZodLike,
+  options: ApiResponseOptions = {},
+): MethodDecorator {
+  return (target, propertyKey): void => {
+    const metadata: ApiResponseMetadata = { schema, ...options };
+    Reflect.defineMetadata(
+      API_RESPONSE_METADATA_KEY,
+      metadata,
+      (target as any).constructor,
+      propertyKey,
+    );
+  };
+}
+
+export function getApiResponse(
+  target: object,
+  propertyKey: string | symbol,
+): ApiResponseMetadata | undefined {
+  return Reflect.getMetadata(API_RESPONSE_METADATA_KEY, target, propertyKey) as
+    | ApiResponseMetadata
+    | undefined;
 }
