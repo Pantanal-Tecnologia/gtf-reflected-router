@@ -11,5 +11,18 @@
       "description": "Verify new exports are in dist/index.d.ts"
     },
     "tool_use_id": "toolu_01S7gkXbSSWig3h2ATx9zxXF"
+  },
+  {
+    "session_id": "f9c0415c-3ade-4478-9695-4211b509fec6",
+    "transcript_path": "/Users/thiago/.claude/projects/-Users-thiago-gtf-reflected-router/f9c0415c-3ade-4478-9695-4211b509fec6.jsonl",
+    "cwd": "/Users/thiago/gtf-reflected-router/packages/reflected",
+    "permission_mode": "default",
+    "hook_event_name": "PreToolUse",
+    "tool_name": "Bash",
+    "tool_input": {
+      "command": "pnpm test 2>&1",
+      "description": "Run tests with ts-jest"
+    },
+    "tool_use_id": "toolu_01NjHPcfDyxmYKcmrsUWbgTD"
   }
 ]

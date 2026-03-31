@@ -4,15 +4,7 @@ module.exports = {
   roots: ["<rootDir>/__tests__"],
   testMatch: ["**/?(*.)+(spec|test).ts"],
   transform: {
-    "^.+\\.ts$": [
-      "@swc/jest",
-      {
-        jsc: {
-          parser: { syntax: "typescript", decorators: true },
-          transform: { legacyDecorator: true, decoratorMetadata: true },
-        },
-      },
-    ],
+    "^.+\\.ts$": ["ts-jest", { tsconfig: "./tsconfig.json" }],
   },
   moduleNameMapper: {
     "^(\\.{1,2}/.*)\\.js$": "$1",
