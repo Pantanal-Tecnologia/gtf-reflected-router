@@ -1,6 +1,5 @@
-import { Post, Body, Controller } from "gtf-reflected-router";
-import { Injectable } from "gtf-reflected-router";
-import { AuthService } from "./auth.service";
+import { Post, Body, Controller, Injectable, Inject } from "gtf-reflected-router";
+import { AuthService } from "./auth.service"; // regular import required for emitDecoratorMetadata DI reflection
 import { z } from "zod";
 
 const LoginSchema = z.object({
@@ -11,7 +10,7 @@ const LoginSchema = z.object({
 @Injectable()
 @Controller("/auth")
 export class AuthController {
-  constructor(private readonly authService: AuthService) {}
+  constructor(@Inject(AuthService) private readonly authService: AuthService) {}
 
   @Post("/login", {
     schema: {

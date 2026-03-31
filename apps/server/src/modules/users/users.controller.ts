@@ -7,9 +7,10 @@ import {
   Controller,
   UseGuards,
   UseInterceptors,
+  Injectable,
+  Inject,
 } from "gtf-reflected-router";
-import { Injectable } from "gtf-reflected-router";
-import { UsersService } from "./users.service";
+import { UsersService } from "./users.service"; // regular import required for emitDecoratorMetadata DI reflection
 import { AuthGuard } from "../../core/guards/auth.guard";
 import { LoggingInterceptor } from "../../core/interceptors/logging.interceptor";
 import { z } from "zod";
@@ -24,7 +25,7 @@ const CreateUserSchema = z.object({
 @Controller("/users")
 @UseInterceptors(LoggingInterceptor)
 export class UserController {
-  constructor(private readonly usersService: UsersService) {}
+  constructor(@Inject(UsersService) private readonly usersService: UsersService) {}
 
   @Get("/", {
     schema: {

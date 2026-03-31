@@ -51,7 +51,7 @@ export type {
 
 export { ParamType } from "./types";
 
-export { Container, Injectable } from "./container";
+export { Container, Injectable, Inject } from "./container";
 export { UseGuards, getGuards } from "./guards";
 export type { CanActivate } from "./guards";
 export { UseInterceptors, getInterceptors } from "./interceptors";
